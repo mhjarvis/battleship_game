@@ -1,0 +1,24 @@
+@import url('./reset.css');
+
+/*************************************/ 
+/************** GENERAL **************/
+/*************************************/ 
+
+:root {
+    font-size: 10px;
+
+    
+    /* Color Variables */
+    --white: #000000;       
+}
+
+* {
+ outline: 1px solid red;  
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+}
