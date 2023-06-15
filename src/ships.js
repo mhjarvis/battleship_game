@@ -2,7 +2,18 @@ function Ship(length) {
     return {
         length: length,
         numberOfHits: 0,
-        isSunk: false,
+        sunk: false,
+
+        hit() {
+            this.numberOfHits++;
+        },
+
+        isSunk() {
+            if(this.numberOfHits === length) {
+                return true;
+            }
+            return false;
+        }
     }
 }
 
