@@ -2,7 +2,9 @@ import { Gameboard } from '../gameBoard';
 
 describe('Gameboard', () => {
 
-    test('something', () => {
-        expect(Gameboard()).toBe()
+    const pt = Gameboard();
+
+    test('Gameboard functions are working', () => {
+        expect(Gameboard().createShip(2).length).toBe(2)
     })
 })
