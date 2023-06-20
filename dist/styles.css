@@ -1,11 +1,13 @@
 @import url('./reset.css');
 
+
 /*************************************/ 
 /************** GENERAL **************/
 /*************************************/ 
 
 :root {
     font-size: 10px;
+    font-family: 'itc-machine-std-medium', sans-serif;
 
     
     /* Color Variables */
@@ -13,7 +15,7 @@
 }
 
 * {
- outline: 1px solid red;  
+    outline: 1px solid red;  
 }
 
 body {
