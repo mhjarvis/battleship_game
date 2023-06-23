@@ -53,7 +53,20 @@ button {
 
 main {
     display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
     
 }
 
 /** PLACEHODLER **/
+
+.boards {
+    display: flex;
+    width: 1000px;
+}
+
+.player-section, .computer-section {
+    width: 400px;
+    height: 400px;
+}
