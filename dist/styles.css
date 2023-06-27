@@ -40,6 +40,7 @@ body {
 .game-buttons {
     display: flex;
     justify-content: space-evenly;
+    margin-top: 10rem;
 }
 
 button {
@@ -56,6 +57,7 @@ main {
     align-items: center;
     justify-content: center;
     width: 100%;
+    margin-top: 10rem;
     
 }
 
@@ -63,10 +65,11 @@ main {
 
 .boards {
     display: flex;
-    width: 1000px;
+    justify-content: space-evenly;
+    width: 100%;
 }
 
-.player-section, .computer-section {
+.player-section, .cpu-section {
     width: 400px;
     height: 400px;
 }
