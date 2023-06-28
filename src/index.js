@@ -1,5 +1,5 @@
 import { Ship } from './ship';
-import { initializeGameButtons } from './eventListeners';
+import { initializeGameButtons } from './gameButtons';
 
 (function () {
 
