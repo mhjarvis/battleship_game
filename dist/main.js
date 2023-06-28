@@ -1,1 +1,1 @@
-(()=>{"use strict";console.log({length:5,numberOfHits:0,sunk:!1,hit(){this.numberOfHits++},isSunk(){return 5===this.numberOfHits}})})();
+(()=>{"use strict";!function(){let e=document.querySelector(".start-game-btn"),t=document.querySelector(".restart-game-btn");e.addEventListener("click",(()=>{console.log("start")})),t.addEventListener("click",(()=>{console.log("reset")}))}()})();

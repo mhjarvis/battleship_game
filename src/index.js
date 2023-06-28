@@ -1,3 +1,8 @@
 import { Ship } from './ship';
+import { initializeGameButtons } from './eventListeners';
 
-console.log(Ship(5));
+(function () {
+
+    initializeGameButtons();
+
+}())
