@@ -73,3 +73,27 @@ main {
     width: 400px;
     height: 400px;
 }
+
+
+/** FORM ELEMENT **/
+.form-container {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    height: 45rem;
+    width: 40rem;
+
+    background-color: white;
+}
+
+.place-ships {
+    
+    display: flex;
+    justify-content: center;
+}
+
+#legend {
+    font-size: 2.4rem;
+    padding: 1rem;
+    
+}
