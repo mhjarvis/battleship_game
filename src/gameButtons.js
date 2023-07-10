@@ -12,6 +12,7 @@ function initializeGameButtons() {
     })
 
     resetButton.addEventListener('click', () => {
+        showForm.style.visibility = 'visible';
         console.log('reset')
     })
 
