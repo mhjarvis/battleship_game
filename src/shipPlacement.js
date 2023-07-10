@@ -16,6 +16,7 @@ function createBoard() {
             const div = document.createElement('div');
             div.setAttribute('class', 'box');
             div.setAttribute('id', 'box' + i + j);
+            div.innerHTML = 'id' + i + j;
             boxContainer.appendChild(div);
         }
     }
