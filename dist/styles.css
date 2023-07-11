@@ -75,7 +75,7 @@ main {
 .player-heading, .computer-heading {
     font-size: 2.5rem;
 }
-.player-board, .computer-board {
+.player-board, .computer-board, .place-ships-board {
     display: flex;
     flex-wrap: wrap;
     max-width: 30rem;
@@ -84,6 +84,9 @@ main {
 }
 
 .box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 3rem;
     height: 3rem;
 }

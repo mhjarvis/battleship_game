@@ -1,3 +1,5 @@
+import { GameBoard } from "./gameBoard";
+
 function initializeGameButtons() {
 
     const showForm = document.querySelector('.form-container');
@@ -8,6 +10,9 @@ function initializeGameButtons() {
 
     startButton.addEventListener('click', () => {
         showForm.style.visibility = 'visible';
+        let test = new GameBoard();
+        test.buildBoard('.place-ships-board');
+
         console.log('start')
     })
 
