@@ -1,6 +1,13 @@
 
 const getPlaceShipsBoard = document.querySelector('.place-ships-board');
 
+function populateBoard(user) {
+    const board = document.querySelector(user);
+
+    
+
+}
+
 function createBoard() {
     
     for(let i = 0; i < 10; i++) {
@@ -20,10 +27,6 @@ function createBoard() {
             boxContainer.appendChild(div);
         }
     }
-    
-
-
-
 }
 
-export { createBoard }
+export { createBoard , populateBoard }
