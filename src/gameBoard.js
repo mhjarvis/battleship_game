@@ -11,6 +11,7 @@ class GameBoard {
         for(let i = 0; i < 10; i++) {
             for(let j = 0; j < 10; j++) {
                 subArr.push({
+                    'coordinate' : [i, j],
                     'ship': false,
                     'shot': false
                 })
@@ -30,6 +31,7 @@ class GameBoard {
                 div.setAttribute('id', 'id' + i + j);
                 div.setAttribute('class', 'box')
                 theBoard.appendChild(div);
+                div.innerHTML = this.board[i][j].coordinate;
                 console.log('test')
             }
         }
