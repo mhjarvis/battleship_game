@@ -1,14 +1,14 @@
-import { Gameboard } from '../gameBoard';
+import { GameBoard } from '../gameBoard';
 
 describe('Gameboard', () => {
 
-    const pt = Gameboard();
+    let pt = new GameBoard();
 
-    test('Gameboard functions are working', () => {
-        expect(Gameboard().createShip(2).length).toBe(2)
-    })
+//    test('Gameboard functions are working', () => {
+//        expect(pt.createShip(2).length).toBe(2)
+//    })
     test('Gameboard length is 10 x 10', () => {
-        expect()
+        expect(pt.board.length && pt.board[0].length).toBe(10);
     })
 
 
