@@ -8,7 +8,6 @@ import { GameBoard } from './gameBoard';
     initializeGameButtons();
     createBoard();
 
-    let test = new GameBoard();
-    console.log(test)
+
 
 }())
