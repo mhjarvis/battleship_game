@@ -28,4 +28,10 @@ describe('Ship factory function', () => {
         s1.hit();
         expect(s1.isSunk()).toBe(true);
     })
+    test('Ship.sunk is updated to "true" when numberOfHits = length', () => {
+        let s1 = Ship(2);
+        s1.hit();
+        s1.hit();
+        expect(s1.sunk).toBe(true);
+    })
 })
