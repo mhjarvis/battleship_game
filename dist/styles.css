@@ -27,11 +27,75 @@ body {
     overflow-x: hidden;
 }
 
+/*************************************
+                TEMP
+*************************************/
+
+.option-container {
+    display: flex;
+    align-items: center;
+    margin: 3rem 0;
+    width: 50rem;
+    height: 5rem;
+    background-color: yellow;
+}
+
+.destroyer {
+    background-color: red;
+}
+
+.destroyer-preview {
+    width: 2rem;
+    height: 1rem;
+    margin: 0.3rem;
+}
+
+.submarine {
+    background-color: green;
+}
+
+.submarine-preview {
+    width: 3rem;
+    height: 1rem;
+    margin: 0.3rem;
+}
+
+.cruiser {
+    background-color: blue;
+}
+
+.cruiser-preview {
+    width: 4rem;
+    height: 1rem;
+    margin: 0.3rem;
+}
+
+.battleship {
+    background-color: orange;
+}
+
+.battleship-preview {
+    width: 4rem;
+    height: 1rem;
+    margin: 0.3rem;
+}
+
+.carrier {
+    background-color: black;
+}
+
+.carrier-preview {
+    width: 5rem;
+    height: 1rem;
+    margin: 0.3rem;
+}
+
+
 /*************************************/ 
 /************** HEADER ***************/
 /*************************************/ 
 
-
+/**
 .title {
     font-size: 8rem;
     font-weight: 900;
@@ -52,6 +116,7 @@ button {
 /*************** MAIN ****************/
 /*************************************/
 
+/*
 main {
     display: flex;
     align-items: center;
