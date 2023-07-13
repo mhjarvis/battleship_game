@@ -1,4 +1,4 @@
-import { initializeButtons } from "./old/gameButtons";
+import { initializeButtons } from "./gameButtons";
 
 (function () {
 
