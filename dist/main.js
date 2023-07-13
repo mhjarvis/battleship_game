@@ -1,0 +1,1 @@
+(()=>{"use strict";const t=document.querySelector(".option-container");let e=0;document.querySelector("#rotate-button").addEventListener("click",(function(){const o=Array.from(t.children);e=0===e?90:0,o.forEach((t=>t.style.transform=`rotate(${e}deg)`))}))})();

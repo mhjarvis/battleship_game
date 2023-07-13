@@ -1,15 +1,10 @@
+import { initializeButtons } from "./old/gameButtons";
 
+(function () {
 
+    initializeButtons();
 
-
-
-
-
-
-
-
-
-
+}())
 
 
 
