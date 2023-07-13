@@ -1,5 +1,3 @@
-import { Ship } from "./ship";
-
 class GameBoard {
     constructor() {
         this.board = this.createBoard();
