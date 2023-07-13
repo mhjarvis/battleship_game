@@ -9,6 +9,7 @@ class GameBoard {
         for(let i = 0; i < 10; i++) {
             for(let j = 0; j < 10; j++) {
                 subArr.push({
+                    'name': 'id' + i + j,
                     'coordinate' : [i, j],
                     'ship': false,
                     'shot': false

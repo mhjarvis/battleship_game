@@ -1,4 +1,33 @@
-import { initializeGameButtons } from './gameButtons';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*import { initializeGameButtons } from './gameButtons';
 import { createBoard } from './shipPlacement';
 import { GameBoard } from './gameBoard';
 import { populateBoard } from './shipPlacement';
@@ -31,12 +60,18 @@ function gameLoop() {
     for(let i = 0; i < getBoxes.length; i++) {
         getBoxes.item(i).addEventListener('mouseover', () => {
             getBoxes.item(i).classList.add('changeToGray');
-            console.log('poop')
-        })
+            console.log(getBoxes.item(i))
+
+        let id = getBoxes.item(i).id;
+    
+    })
         getBoxes.item(i).addEventListener('mouseout', () => {
             getBoxes.item(i).classList.remove('changeToGray');
         })
     }
+
+    // hightlight 2 cells on mouseover
+
 
 
 
@@ -46,3 +81,5 @@ function gameLoop() {
 
     console.log('gameLoop()')
 }
+
+*/
