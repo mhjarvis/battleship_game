@@ -83,7 +83,7 @@ main {
     margin-top: 2rem;
 }
 
-.box {
+.box-player-board, .box-computer-board, .box {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -91,5 +91,7 @@ main {
     height: 3rem;
 }
 
-
+.changeToGray {
+    background-color: gray;
+}
 

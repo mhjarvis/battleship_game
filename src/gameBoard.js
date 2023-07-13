@@ -27,7 +27,7 @@ class GameBoard {
             for(let j = 0; j < 10; j++) {
                 const div = document.createElement('div');
                 div.setAttribute('id', 'id' + i + j);
-                div.setAttribute('class', 'box')
+                div.setAttribute('class', 'box');
                 theBoard.appendChild(div);
                 div.innerHTML = this.board[i][j].coordinate;
                 console.log('test')
