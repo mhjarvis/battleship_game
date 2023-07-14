@@ -27,9 +27,44 @@ body {
     overflow-x: hidden;
 }
 
+button {
+    width: 20rem;
+}
+
 /*************************************
                 TEMP
 *************************************/
+
+#gamesboard-container {
+    width: 50rem;
+    display: flex;
+
+    justify-content: space-between;
+}
+
+.game-board {
+    width: 20rem;
+    height: 20rem;
+    margin-top: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.block {
+    width: 20px;
+    height: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+/**** SHIPS ****/
 
 .option-container {
     display: flex;
