@@ -22,3 +22,4 @@ function createBoard(color, user) {
 }
 
 export { createBoard }
+
