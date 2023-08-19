@@ -1,0 +1,1 @@
+(()=>{"use strict";console.log({length:5,numberOfTimesHit:0,isSunk:!1})})();
