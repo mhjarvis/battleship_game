@@ -1,6 +1,10 @@
 import { createShip } from "./Ship";
 
-let test = createShip(5);
+let carrier = createShip(5)
+let battleship = createShip(4)
+let cruiser = createShip(3)
+let submarine = createShip(3)
+let destroyer = createShip(2)
 
-console.log(test);
+console.log(battleship);
 

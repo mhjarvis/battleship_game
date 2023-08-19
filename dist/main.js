@@ -1,1 +1,1 @@
-(()=>{"use strict";console.log({length:5,numberOfTimesHit:0,isSunk:!1})})();
+(()=>{"use strict";function e(e){return{length:e,numberOfTimesHit:0,isSunk:!1}}e(5);let n=e(4);e(3),e(3),e(2),console.log(n)})();
