@@ -5,7 +5,7 @@ Begin your app by creating the Ship factory function.
 ***************************************************************/
 
 
-function createShip(length) {
+function Ship(length) {
     return {
         length: length,
         numberOfTimesHit: 0,
@@ -17,4 +17,4 @@ function createShip(length) {
     }
 }
 
-export { createShip }
+export { Ship }
