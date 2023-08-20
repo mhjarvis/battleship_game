@@ -2,8 +2,6 @@ Begin your app by creating the Ship factory function.
     
     
     REMEMBER you only have to test your object’s public interface. Only methods or properties that are used outside of your ‘ship’ object need unit tests.
-
-    Ships should have a hit() function that increases the number of ‘hits’ in your ship.
     
     isSunk() should be a function that calculates it based on their length and the number of ‘hits’.
 
