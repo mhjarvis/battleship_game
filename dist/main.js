@@ -1,1 +1,1 @@
-(()=>{"use strict";function e(e){return{length:e,numberOfTimesHit:0,isSunk:!1}}e(5);let n=e(4);e(3),e(3),e(2),console.log(n)})();
+(()=>{"use strict";function t(t){return{length:t,numberOfTimesHit:0,isSunk:!1,hit(){this.numberOfTimesHit++}}}t(5);let e=t(4);t(3),t(3),t(2),console.log(e)})();
