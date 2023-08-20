@@ -1,1 +1,1 @@
-(()=>{"use strict";function t(t){return{length:t,numberOfTimesHit:0,isSunk:!1,hit(){this.numberOfTimesHit++}}}t(5);let e=t(4);t(3),t(3),t(2),console.log(e)})();
+(()=>{"use strict";function i(i){return{length:i,numberOfTimesHit:0,hit(){this.numberOfTimesHit++},isSunk(){return this.length===this.numberOfTimesHit}}}i(5);let t=i(4);i(3),i(3),i(2),t.hit(),t.hit(),t.hit(),console.log(t.isSunk()),t.hit(),console.log(t),console.log(t.isSunk())})();
