@@ -1,8 +1,3 @@
-Begin your app by creating the Ship factory function.
-    
-    
-    REMEMBER you only have to test your object’s public interface. Only methods or properties that are used outside of your ‘ship’ object need unit tests.
-
 Create Gameboard factory.
     1. Note that we have not yet created any User Interface. We should know our code is coming together by running the tests. You shouldn’t be relying on console.log or DOM methods to make sure your code is doing what you expect it to.
     
