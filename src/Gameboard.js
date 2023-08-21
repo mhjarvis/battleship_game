@@ -9,16 +9,30 @@ import { Ship } from "./Ship"
 function Gameboard() {
     return {
         
+        board: [],
+        ships: [Ship(5), Ship(4), Ship(3), Ship(3), Ship(2)],
+        allShipsSunk: [false, false, false, false, false],
 
+        placeShip() {
+            return true;
+        },
 
+        receiveAttack() {
+            return true;
+        },
 
+        assignHit() {
+            return true;
+        },
 
+        assignMiss() {
+            return true;
+        },
 
-        placeShip(length, coordinates) {
-            let temp = Ship(length)
+        createBoard() {
 
-        }
+        },
     }
-
-
 }
+
+export { Gameboard }
