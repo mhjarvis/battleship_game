@@ -1,12 +1,18 @@
 import { Ship } from "./Ship";
 import { Gameboard } from "./Gameboard";
 
-let playerBoard = Gameboard()
-let computerBoard = Gameboard()
+let playerboard, computerBoard;
 
-console.log(playerBoard)
+(function () {
+    playerboard = Gameboard()   
+    playerboard.createBoard()
+    computerBoard = Gameboard()
+    computerBoard.createBoard()
+}())
 
 
+console.log(playerboard)
+console.log(computerBoard)
 
 
 

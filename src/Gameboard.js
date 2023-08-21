@@ -30,7 +30,9 @@ function Gameboard() {
         },
 
         createBoard() {
-
+            for(let i = 0; i < 100; i++) {
+                this.board.push(null)
+            }
         },
     }
 }
