@@ -16,24 +16,24 @@ function Gameboard() {
         ships: [Ship(5), Ship(4), Ship(3), Ship(3), Ship(2)],
         allShipsSunk: [false, false, false, false, false],
 
-        placeShip() {
-            return true;
+        placeShip(coordinate) {
+            
+            
         },
 
         receiveAttack() {
             return true;
         },
 
-        assignHit() {
-            return true;
+        assignHit(coordinate) {
+            this.board[coordinate] = 'hit'
         },
 
-        assignMiss() {
-            return true;
+        assignMiss(coordinate) {
+            this.board[coordinate] = 'miss'
         },
 
         createBoard() {
-
             for(let i = 0; i < 100; i++) {
                 this.board.push(null)
             }
