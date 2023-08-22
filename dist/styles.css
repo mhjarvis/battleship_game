@@ -18,7 +18,44 @@
 
 body {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     overflow-x: hidden;
+}
+
+/*************************************/ 
+/************** HEADER ***************/
+/*************************************/ 
+
+.title {
+    font-size: 6rem;;
+    font-weight: 700;
+    margin: 2rem 0;
+}
+
+
+/*************************************/ 
+/************* GAMEBOARD *************/
+/*************************************/ 
+
+#gameboard-container {
+    width: 900px;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#player-board, #computer-board {
+    width: 320px;
+    height: 320px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.player-board-cell, .computer-board-cell {
+    width: 30px;
+    height: 30px;
+    border: 1px solid black;
 }
