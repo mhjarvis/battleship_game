@@ -8,6 +8,13 @@ let playerboard, computerboard;
     playerboard.createBoard()
     computerboard = Gameboard()
     computerboard.createBoard()
+
+    // Event listener to hide cover
+    document.querySelector('.cover').addEventListener('click', function() {
+        document.querySelector('.cover').style.display = 'none';
+        console.log("boobs")
+    })
+
 }())
 
 
@@ -38,3 +45,5 @@ function buildBoardInDOM(boardName, name) {
         console.log('test')
     }
 }
+
+// Event Listener for cover
