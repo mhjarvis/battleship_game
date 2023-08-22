@@ -1,5 +1,6 @@
 import { Ship } from "./Ship";
 import { Gameboard } from "./Gameboard";
+import { startInitialListeners } from "./eventListeners";
 
 let playerboard, computerboard;
 
@@ -9,11 +10,8 @@ let playerboard, computerboard;
     computerboard = Gameboard()
     computerboard.createBoard()
 
-    // Event listener to hide cover
-    document.querySelector('.cover').addEventListener('click', function() {
-        document.querySelector('.cover').style.display = 'none';
-        console.log("boobs")
-    })
+    // Default event listeners
+    startInitialListeners()
 
 }())
 
