@@ -30,7 +30,7 @@ body {
 /*************************************/ 
 
 .cover {
-    display: flex; /*********** Change to block upon completion ************/
+    display: none; /*********** Change to block upon completion ************/
     align-items: center;
     justify-content: center; 
     position: absolute;

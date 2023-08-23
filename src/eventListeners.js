@@ -7,9 +7,9 @@ function startInitialListeners() {
     document.querySelector('.cover').addEventListener('click', function() {
         document.querySelector('.cover').style.display = 'none';
 
-        document.querySelector('.place-ships').style.display = 'flex'
+        // populate place-ships board
         populatePlaceShipsBoard()
-        
+
     })
 
     // Add Even listeners to each individual board cell
@@ -25,7 +25,8 @@ function startInitialListeners() {
             resolveComputerBoardAction(event.target.id)
         })
     }
-
 }
+
+
 
 export { startInitialListeners }
