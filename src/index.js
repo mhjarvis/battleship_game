@@ -49,5 +49,13 @@ function buildBoardInDOM(boardName, name) {
 
 // Event Listener for cover
 
+function resolvePlayerBoardAction(id) {
+    console.log(id)
+}
 
-export { }
+function resolveComputerBoardAction(id) {
+    console.log(id)
+}
+
+
+export { resolvePlayerBoardAction, resolveComputerBoardAction }

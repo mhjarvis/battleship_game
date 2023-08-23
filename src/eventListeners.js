@@ -1,4 +1,4 @@
-
+import { resolvePlayerBoardAction, resolveComputerBoardAction } from ".";
 // hide cover
 
 function startInitialListeners() {
@@ -10,12 +10,14 @@ function startInitialListeners() {
 
     // Add Even listeners to each individual board cell
     const playerCells = document.querySelectorAll('.player-board-cell')
-    console.log(playerCells)
     const computerCells = document.querySelectorAll('.computer-board-cell')
     
     for (let i = 0; i < playerCells.length; i++) {
         playerCells[i].addEventListener('click', function() {
-            console.log('poop')
+            resolvePlayerBoardAction(event.target.id)
+        })
+        computerCells[i].addEventListener('click', function() {
+            resolveComputerBoardAction(event.target.id)
         })
     }
 
