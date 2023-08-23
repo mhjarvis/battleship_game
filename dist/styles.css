@@ -124,3 +124,11 @@ body {
     height: 30px;
     border: 1px solid black;
 }
+
+.ships {
+    display: flex;
+    width: 600px;
+    justify-content: space-evenly;
+    font-size: 2rem;
+    margin-top: 3rem;
+}
