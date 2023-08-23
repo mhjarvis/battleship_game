@@ -43,7 +43,6 @@ function buildBoardInDOM(boardName, name) {
         div.classList.add(name + '-cell')
         div.id = i
         getGameboardContainer.append(div)
-        console.log('test')
     }
 }
 
@@ -57,5 +56,16 @@ function resolveComputerBoardAction(id) {
     console.log(id)
 }
 
+function populatePlaceShipsBoard() {
+    const getShipBoard = document.querySelector('#place-ships-board')
 
-export { resolvePlayerBoardAction, resolveComputerBoardAction }
+    for (let i = 0; i < 100; i++) {
+        const div = document.createElement('div')
+        div.classList.add('place-ships-board-cell')
+        div.id = 'i' + i;
+        getShipBoard.append(div);
+    }
+}
+
+
+export { resolvePlayerBoardAction, resolveComputerBoardAction, populatePlaceShipsBoard }

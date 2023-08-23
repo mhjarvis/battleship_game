@@ -1,4 +1,4 @@
-import { resolvePlayerBoardAction, resolveComputerBoardAction } from ".";
+import { resolvePlayerBoardAction, resolveComputerBoardAction, populatePlaceShipsBoard } from ".";
 // hide cover
 
 function startInitialListeners() {
@@ -6,6 +6,10 @@ function startInitialListeners() {
     // Event listener to hide cover
     document.querySelector('.cover').addEventListener('click', function() {
         document.querySelector('.cover').style.display = 'none';
+
+        document.querySelector('.place-ships').style.display = 'flex'
+        populatePlaceShipsBoard()
+        
     })
 
     // Add Even listeners to each individual board cell

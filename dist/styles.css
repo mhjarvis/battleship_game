@@ -30,7 +30,7 @@ body {
 /*************************************/ 
 
 .cover {
-    display: none; /*********** Change to block upon completion ************/
+    display: flex; /*********** Change to block upon completion ************/
     align-items: center;
     justify-content: center; 
     position: absolute;
@@ -117,4 +117,10 @@ body {
 
 .place-ships-board {
 
+}
+
+.place-ships-board-cell {
+    width: 30px;
+    height: 30px;
+    border: 1px solid black;
 }
