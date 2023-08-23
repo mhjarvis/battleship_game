@@ -5,10 +5,16 @@ import { startInitialListeners } from "./eventListeners";
 let playerboard, computerboard;
 
 (function () {
+    
+    // initialize gameboard objects for player/computer
     playerboard = Gameboard()   
     playerboard.createBoard()
     computerboard = Gameboard()
     computerboard.createBoard()
+
+    // build the boards and assign id/classes to individual cells
+    buildBoardInDOM(playerboard, 'player-board')
+    buildBoardInDOM(computerboard, 'computer-board')
 
     // Default event listeners
     startInitialListeners()
@@ -28,9 +34,6 @@ console.log(computerboard)
 
 // npx webpack --watch
 
-buildBoardInDOM(playerboard, 'player-board')
-buildBoardInDOM(computerboard, 'computer-board')
-
 function buildBoardInDOM(boardName, name) {
     
     const getGameboardContainer = document.querySelector('#' + name )
@@ -45,3 +48,6 @@ function buildBoardInDOM(boardName, name) {
 }
 
 // Event Listener for cover
+
+
+export { }
