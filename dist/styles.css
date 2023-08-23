@@ -103,8 +103,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 700px;
-    height: 600px;
+    width: 800px;
+    height: 700px;
     position: absolute;
     background-color: white;
     border: 1px solid black;
@@ -131,4 +131,49 @@ body {
     justify-content: space-evenly;
     font-size: 2rem;
     margin-top: 3rem;
+}
+
+/*************************************/ 
+/*************** SHIPS ***************/
+/*************************************/ 
+
+.ship-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#carrier {
+    width: 3rem;
+    height: 15rem;
+    background-color: darkblue;
+    margin-top: 2rem;
+}
+
+#battleship {
+    width: 3rem;
+    height: 12rem;
+    background-color: darkgreen;
+    margin-top: 2rem;
+}
+
+#cruiser {
+    width: 3rem;
+    height: 9rem;
+    background-color: orange;
+    margin-top: 2rem;
+}
+
+#submarine {
+    width: 3rem;
+    height: 9rem;
+    background-color: black;
+    margin-top: 2rem;
+}
+
+#destroyer {
+    width: 3rem;
+    height: 6rem;
+    background-color: red;
+    margin-top: 2rem;
 }
