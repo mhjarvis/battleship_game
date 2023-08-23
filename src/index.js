@@ -1,6 +1,7 @@
 import { Ship } from "./Ship";
 import { Gameboard } from "./Gameboard";
 import { startInitialListeners } from "./eventListeners";
+import { dragDropSequence } from "./dragDropSequence";
 
 let playerboard, computerboard;
 
@@ -18,6 +19,8 @@ let playerboard, computerboard;
 
     // Default event listeners
     startInitialListeners()
+
+    dragDropSequence()
 
 }())
 
