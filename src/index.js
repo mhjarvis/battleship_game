@@ -23,17 +23,10 @@ let playerboard, computerboard;
 
 
 
-console.log(playerboard.board.indexOf(33))
-playerboard.assignMiss(33)
-console.log(playerboard.board.indexOf(34))
-
-console.log(playerboard)
-console.log(computerboard)
-
-
 
 // npx webpack --watch
 
+// Function to display player/computer boards
 function buildBoardInDOM(boardName, name) {
     
     const getGameboardContainer = document.querySelector('#' + name )
@@ -46,7 +39,6 @@ function buildBoardInDOM(boardName, name) {
     }
 }
 
-// Event Listener for cover
 
 function resolvePlayerBoardAction(id) {
     console.log(id)
@@ -56,6 +48,7 @@ function resolveComputerBoardAction(id) {
     console.log(id)
 }
 
+// Function to display place-ship board
 function populatePlaceShipsBoard() {
     const getShipBoard = document.querySelector('#place-ships-board')
 
@@ -66,6 +59,8 @@ function populatePlaceShipsBoard() {
         getShipBoard.append(div);
     }
 }
+
+// 
 
 
 export { resolvePlayerBoardAction, resolveComputerBoardAction, populatePlaceShipsBoard }
