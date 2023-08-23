@@ -77,7 +77,7 @@ body {
     justify-content: space-evenly;
 }
 
-#player-board, #computer-board {
+#player-board, #computer-board, #place-ships-board {
     width: 320px;
     height: 320px;
     display: flex;
@@ -89,4 +89,32 @@ body {
     width: 30px;
     height: 30px;
     border: 1px solid black;
+}
+
+.player-board-cell:hover, .computer-board-cell:hover {
+    background-color: gray;
+}
+
+/*************************************/ 
+/************ PLACE SHIPS ************/
+/*************************************/ 
+
+.place-ships {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 700px;
+    height: 600px;
+    position: absolute;
+    background-color: white;
+    border: 1px solid black;
+}
+
+.place-ships-heading {
+    font-size: 3rem;
+    margin: 3rem 0;
+}
+
+.place-ships-board {
+
 }
