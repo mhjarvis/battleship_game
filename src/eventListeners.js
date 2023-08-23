@@ -12,6 +12,7 @@ function startInitialListeners() {
     const playerCells = document.querySelectorAll('.player-board-cell')
     const computerCells = document.querySelectorAll('.computer-board-cell')
     
+    // Cell clicks send coordinates of cell to respective resolve function in index.js
     for (let i = 0; i < playerCells.length; i++) {
         playerCells[i].addEventListener('click', function() {
             resolvePlayerBoardAction(event.target.id)
