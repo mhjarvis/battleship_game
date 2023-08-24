@@ -22,6 +22,8 @@ let playerboard, computerboard;
 
     dragDropSequence()
 
+    populatePlaceShipsBoard(); // REMOVE AFTER FINALIZATION
+
 }())
 
 
@@ -54,16 +56,56 @@ function resolveComputerBoardAction(id) {
 // Function to display place-ship board
 function populatePlaceShipsBoard() {
     const getShipBoard = document.querySelector('#place-ships-board')
-
+    console.log('test')
     for (let i = 0; i < 100; i++) {
         const div = document.createElement('div')
+
+        // add identifiers
         div.classList.add('place-ships-board-cell')
         div.id = 'i' + i;
+
+        // add additional event listeners for drag & drop methods
+        div.addEventListener('dragenter', dragEnter)
+        div.addEventListener('dragover', dragOver)
+        div.addEventListener('dragleave', dragLeave)
+        div.addEventListener('drop', drop)
+
         getShipBoard.append(div);
     }
 }
 
-// 
+function dragEnter(e) {
+    e.preventDefault()
+    e.target.classList.add('drag-over')
+}
+function dragOver(e) {
+    e.preventDefault()
+    e.target.classList.add('drag-over')
+}
+function dragLeave(e) {
+    e.target.classList.remove('drag-over')
+}
+function drop(e) {
+    e.target.classList.remove('drag-over')
+    
+    console.log('droped')
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 export { resolvePlayerBoardAction, resolveComputerBoardAction, populatePlaceShipsBoard }

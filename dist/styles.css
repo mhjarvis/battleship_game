@@ -25,10 +25,6 @@ body {
     overflow-x: hidden;
 }
 
-.hide {
-    display: none;
-}
-
 /*************************************/ 
 /************** COVER ****************/
 /*************************************/ 
@@ -127,6 +123,7 @@ body {
     width: 30px;
     height: 30px;
     border: 1px solid black;
+    
 }
 
 .ships {
@@ -185,3 +182,11 @@ body {
 /*************************************/ 
 /********** DRAGABLE EVENTS **********/
 /*************************************/ 
+
+.hide {
+    display: none;
+}
+
+.drag-over {
+    border: dashed 3px red;
+}

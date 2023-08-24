@@ -6,7 +6,6 @@ function dragDropSequence() {
     for (let i = 0; i < item.length; i++) {
         item[i].addEventListener('dragstart', dragstart)
     }
-    console.log(item)
 }
 
 function dragstart(e) {
