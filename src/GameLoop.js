@@ -1,0 +1,10 @@
+
+function startGame() {
+
+
+
+
+
+}
+
+export { startGame }

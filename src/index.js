@@ -20,7 +20,6 @@ let playerboard, computerboard;
     // Default event listeners
     startInitialListeners()
 
-    populatePlaceShipsBoard(); // REMOVE AFTER FINALIZATION
 
 }())
 
