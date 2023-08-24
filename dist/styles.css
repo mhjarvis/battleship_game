@@ -120,10 +120,11 @@ body {
 }
 
 .place-ships-board-cell {
+    display: flex;
+    align-items: flex-end;
     width: 30px;
     height: 30px;
     border: 1px solid black;
-    
 }
 
 .ships {
@@ -146,35 +147,35 @@ body {
 
 #carrier {
     width: 3rem;
-    height: 15rem;
+    height: 15.8rem;
     background-color: darkblue;
     margin-top: 2rem;
 }
 
 #battleship {
     width: 3rem;
-    height: 12rem;
+    height: 12.6rem;
     background-color: darkgreen;
     margin-top: 2rem;
 }
 
 #cruiser {
     width: 3rem;
-    height: 9rem;
+    height: 9.4rem;
     background-color: orange;
     margin-top: 2rem;
 }
 
 #submarine {
     width: 3rem;
-    height: 9rem;
+    height: 9.4rem;
     background-color: black;
     margin-top: 2rem;
 }
 
 #destroyer {
     width: 3rem;
-    height: 6rem;
+    height: 6.2rem;
     background-color: red;
     margin-top: 2rem;
 }
@@ -188,5 +189,5 @@ body {
 }
 
 .drag-over {
-    border: dashed 3px red;
+    background-color: rgb(88, 83, 76);
 }
