@@ -1,5 +1,6 @@
 const funcs = require('../Ship');
 
+// TESTS FOR SHIP CLASS
 describe("Create Ship Object functions", () => {
 
     test('hit() function increases numberOfHits by 1', () => {
