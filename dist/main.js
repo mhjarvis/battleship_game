@@ -1,0 +1,1 @@
+(()=>{"use strict";let t=class{consturctor(t,s){this.name=t,this.length=s}}("terst",5);console.log(t)})();
