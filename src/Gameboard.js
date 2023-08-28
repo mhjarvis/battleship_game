@@ -18,15 +18,45 @@ class Gameboard {
     placeShip(name, length, coordinates) {
         let ship = new Ship(name, length, coordinates)
         
+        // add ship name to this.board array
         for (let i = 0; i < coordinates.length; i++) {
             this.board[coordinates[i]] = ship.name
         }
 
+        // add to ships array to track all ships
         this.ships.push(ship)
 
     }
     receiveAttack(coordinate) {
-        let hitLocation = this.board[coordinate]
+        let testLocation = this.board[coordinate]
+
+        // test for empty space, add 'miss' if null
+        if (testLocation === null) {
+            this.board[coordinate] = 'miss'
+            console.log('miss')
+            return
+        }
+        // if there is a ship there, update hits and test for sunk
+        if (testLocation != null) {
+            let shipName = this.board[coordinate]
+            this.board[coordinate] = 'hit'
+            console.log(shipName)
+            
+            // get ship object from ships
+            let getShip = this.ships.find((s) => s.name === shipName)
+
+            // increase hit number
+            getShip.hit()
+            
+            // test whether ship is sunk
+            if (getShip.checkIsSunk()) {
+                this.numberOfShipsSunk++
+                console.log('Number of Ships Sunk: ' + this.numberOfShipsSunk)
+            }
+
+
+            return
+        }
     }
 
 
