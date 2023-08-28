@@ -54,6 +54,13 @@ body {
     background-color: #3f92a4;
 }
 
+.red {
+    background-color: red;
+}
+
+.blue {
+    background-color:blue;
+}
 /*************************************/ 
 /************** HEADER ***************/
 /*************************************/ 
@@ -85,13 +92,13 @@ body {
     border: 1px solid black;
 }
 
-.player-board-cell, .computer-board-cell {
+.board-cell {
     width: 30px;
     height: 30px;
     border: 1px solid black;
 }
 
-.player-board-cell:hover, .computer-board-cell:hover {
+.hover {
     background-color: gray;
 }
 
