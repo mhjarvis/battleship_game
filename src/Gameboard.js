@@ -13,12 +13,16 @@ class Gameboard {
     constructor() {
         this.board = []
         this.numberOfShipsSunk = 0
+        this.ships = []
     }
     placeShip(name, length, coordinates) {
-        let ship = new Ship(name, length)
-        // NEEDS UPDATING
+        let ship = new Ship(name, length, coordinates)
         
+        for (let i = 0; i < coordinates.length; i++) {
+            this.board[coordinates[i]] = ship.name
+        }
 
+        this.ships.push(ship)
 
     }
     receiveAttack(coordinate) {
