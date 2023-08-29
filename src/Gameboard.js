@@ -59,6 +59,11 @@ class Gameboard {
         }
     }
 
+    // Get number of sunk ships
+    getSunkShipCount() {
+        return this.numberOfShipsSunk
+    }
+
     // create indidual cells on game setup
     createBoard() {
         let temp = []

@@ -23,6 +23,7 @@ playerBoard.receiveAttack(85)
 updateGameboardDisplay('#player-board', playerBoard.board)
 
 
+
 function updateGameboardDisplay(boardNameInDOM, playerBoard) {
     let getBoard = document.querySelector(boardNameInDOM)
     getBoard.innerHTML = ''
