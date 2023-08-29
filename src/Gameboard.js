@@ -11,10 +11,12 @@ import { Ship } from "./Ship";
 
 class Gameboard {
     constructor() {
-        this.board = []
-        this.numberOfShipsSunk = 0
-        this.ships = []
+        this.board = this.createBoard()             // holds cells, hits, misses, ships
+        this.numberOfShipsSunk = 0                  // use to check for endgame
+        this.ships = []                             // hold ship objects as they are created / placed 
     }
+
+    // create new Ship object, update gameboard with ship name in cells
     placeShip(name, length, coordinates) {
         let ship = new Ship(name, length, coordinates)
         
@@ -25,8 +27,8 @@ class Gameboard {
 
         // add to ships array to track all ships
         this.ships.push(ship)
-
     }
+
     receiveAttack(coordinate) {
         let testLocation = this.board[coordinate]
 
@@ -53,24 +55,17 @@ class Gameboard {
                 this.numberOfShipsSunk++
                 console.log('Number of Ships Sunk: ' + this.numberOfShipsSunk)
             }
-
-
             return
         }
     }
 
-
-
-
-
-
-
-
-
+    // create indidual cells on game setup
     createBoard() {
+        let temp = []
         for (let i = 0; i < 100; i++) {
-            this.board.push(null)
+            temp.push(null)
         }
+        return temp
     }
 }
 
