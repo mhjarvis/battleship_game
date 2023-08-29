@@ -7,12 +7,10 @@ let computerBoard = new Gameboard
 console.log(playerBoard)
 console.log(computerBoard)
 
-//updateGameboardDisplay('#player-board', playerBoard.board)
-//updateGameboardDisplay('#computer-board', computerBoard.board)
+updateGameboardDisplay('#player-board', playerBoard.board)
+updateGameboardDisplay('#computer-board', computerBoard.board)
 
-function placeUserShips() {
 
-}
 
 function updateGameboardDisplay(boardNameInDOM, playerBoard) {
     let getBoard = document.querySelector(boardNameInDOM)
