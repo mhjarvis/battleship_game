@@ -20,31 +20,31 @@ class Gameboard {
     placeShip(name, length, coordinates) {
         let ship = new Ship(name, length, coordinates)
         
-        // add ship name to this.board array
-        for (let i = 0; i < coordinates.length; i++) {
+        for (let i = 0; i < coordinates.length; i++) {          // add ship name to this.board
             this.board[coordinates[i]] = ship.name
         }
-
-        // add to ships array to track all ships
-        this.ships.push(ship)
+        this.ships.push(ship)                                   // add to ships array to track all ships
     }
 
+    // Resolve attacks - miss, hit, update ships, update board
     receiveAttack(coordinate) {
-        let testLocation = this.board[coordinate]
+        let index = this.board[coordinate]
 
+        // do nothing if there has already been a  shot (miss / hit)
+        if (index === 'miss' || index === 'hit') {
+            return;                           
+        }
         // test for empty space, add 'miss' if null
-        if (testLocation === null) {
-            this.board[coordinate] = 'miss'
+        if (index === null) {
+            this.board[coordinate] = 'miss'         // update this.board with 'miss' in index
             console.log('miss')
-            return
         }
         // if there is a ship there, update hits and test for sunk
-        if (testLocation != null) {
-            let shipName = this.board[coordinate]
-            this.board[coordinate] = 'hit'
-            console.log(shipName)
-            
-            // get ship object from ships
+        if (index != null && index != 'miss' && index != 'hit') {
+            let shipName = this.board[coordinate]           // hold ship name value from this.board
+            this.board[coordinate] = 'hit'                  // update this.board with 'hit' text
+
+            // get ship object from ships THIS NEEDS TO BE OBJECTS FOR EASIER REFERENCE
             let getShip = this.ships.find((s) => s.name === shipName)
 
             // increase hit number
@@ -53,7 +53,7 @@ class Gameboard {
             // test whether ship is sunk
             if (getShip.checkIsSunk()) {
                 this.numberOfShipsSunk++
-                console.log('Number of Ships Sunk: ' + this.numberOfShipsSunk)
+                console.log('Number of Ships Sunk: ' + this.numberOfShipsSunk)      // REMOVE AFTER TESTING
             }
             return
         }
