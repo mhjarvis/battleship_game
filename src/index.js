@@ -1,4 +1,5 @@
 import { Gameboard } from "./Gameboard";
+import { Player } from "./Player";
 
 // Initialize Gameboard objects and populate board array
 let playerBoard = new Gameboard
@@ -12,15 +13,21 @@ updateGameboardDisplay('#computer-board', computerBoard.board)
 
 playerBoard.placeShip('Cruiser', 3, [55, 65, 75])
 
-playerBoard.receiveAttack(34)
+playerBoard.receiveAttack(5)
+playerBoard.receiveAttack(15)
+playerBoard.receiveAttack(25)
+playerBoard.receiveAttack(35)
+playerBoard.receiveAttack(85)
+playerBoard.receiveAttack(95)
+
 playerBoard.receiveAttack(55)
 playerBoard.receiveAttack(56)
 playerBoard.receiveAttack(45)
 playerBoard.receiveAttack(54)
 playerBoard.receiveAttack(65)
 playerBoard.receiveAttack(75)
-playerBoard.receiveAttack(85)
 updateGameboardDisplay('#player-board', playerBoard.board)
+
 
 
 
@@ -43,3 +50,9 @@ function updateGameboardDisplay(boardNameInDOM, playerBoard) {
 }
 
 // npx webpack --watch
+
+let comp = new Player
+
+comp.getShotLocation(playerBoard.board)
+
+

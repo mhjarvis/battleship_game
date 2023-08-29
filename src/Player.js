@@ -6,6 +6,27 @@ Create Player.
 
 class Player {
     constructor() {
-        
+
+    }
+
+    // get a random shot location for the computer that is free of hits/misses
+    getShotLocation(arr) {
+        let val = null
+
+        while (val === null) {
+            let location = this.getRandomInt(0, 99)     // get random number 0 - 99
+
+            if (arr[location] === undefined) {      // find place free of shots
+                val = location                      // THIS NEEDS TO BE UPDATED
+            } 
+        }
+        return val
+    }
+
+    // random number generator
+    getRandomInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min)
     }
 }
+
+export { Player }

@@ -11,7 +11,7 @@ import { Ship } from "./Ship";
 
 class Gameboard {
     constructor() {
-        this.board = this.createBoard()             // holds cells, hits, misses, ships
+        this.board = new Array(100)//this.createBoard()             // holds cells, hits, misses, ships
         this.numberOfShipsSunk = 0                  // use to check for endgame
         this.ships = []                             // hold ship objects as they are created / placed 
     }
@@ -35,12 +35,12 @@ class Gameboard {
             return;                           
         }
         // test for empty space, add 'miss' if null
-        if (index === null) {
+        if (index === undefined) {
             this.board[coordinate] = 'miss'         // update this.board with 'miss' in index
             console.log('miss')
         }
         // if there is a ship there, update hits and test for sunk
-        if (index != null && index != 'miss' && index != 'hit') {
+        if (index != undefined && index != 'miss' && index != 'hit') {
             let shipName = this.board[coordinate]           // hold ship name value from this.board
             this.board[coordinate] = 'hit'                  // update this.board with 'hit' text
 
@@ -68,7 +68,7 @@ class Gameboard {
     createBoard() {
         let temp = []
         for (let i = 0; i < 100; i++) {
-            temp.push(null)
+            temp.push(0)
         }
         return temp
     }
