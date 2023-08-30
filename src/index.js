@@ -12,14 +12,14 @@ playerBoard.placeShip('Cruiser', 3, [55, 65, 75])
 
 let count = 0
 
+
+
 for (let i = 0; i < 20; i++) {
     takeShot()
     count++
 }
 
 console.log(count)
-
-
 
 
 
@@ -51,7 +51,16 @@ function updateGameboardDisplay(boardNameInDOM, playerBoard) {
 
 function takeShot() {
     let board = playerBoard
-    let loc = getRandomInt(0, 99)
+    let test = true
+
+    while (test) {      // test to make sure the shot is legal
+        let loc = getRandomInt(0, 99)
+
+        if (board.board[loc] === undefined || board.board[loc] === 'Cruiser') {     // needs to be Fixed
+            board.receiveAttack(loc)
+            return
+        }
+    }
 
     board.receiveAttack(loc)
 }
