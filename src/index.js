@@ -19,16 +19,21 @@ playerBoard.placeShip('Destroyer', 3, [20, 30, 40])
 playerBoard.placeShip('Submarine', 3, [57, 67, 77])
 playerBoard.placeShip('Patrol Boat', 2, [98, 99])
 
-let count = 0
+computerBoard.placeShip('Carrier', 5, [55, 65, 75, 85, 95])
+computerBoard.placeShip('BattleShip', 4, [12, 13, 14, 15])
+computerBoard.placeShip('Destroyer', 3, [20, 30, 40])
+computerBoard.placeShip('Submarine', 3, [67, 77, 87])
+computerBoard.placeShip('Patrol Boat', 2, [91, 92])
+
+/* let count = 0
 
 
-// test for different shots
 for (let i = 0; i < 10; i++) {
     takeShot()
     count++
 }
 
-console.log(count)
+console.log(count) */
 
 
 
