@@ -10,10 +10,9 @@ class Player {
     }
 
     // get a random shot location for the computer that is free of hits/misses
-    takeShot() {
+    takeShot(board) {
         let loc = this.getRandomInt(0, 99)
 
-        
 
 
     }

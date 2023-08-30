@@ -10,19 +10,14 @@ updateGameboardDisplay('#computer-board', computerBoard)
 
 playerBoard.placeShip('Cruiser', 3, [55, 65, 75])
 
-playerBoard.receiveAttack(23)
-playerBoard.receiveAttack(55)
-playerBoard.receiveAttack(65)
-playerBoard.receiveAttack(75)
+let count = 0
 
-let computer = new Player
+for (let i = 0; i < 20; i++) {
+    takeShot()
+    count++
+}
 
-computer.takeShot()
-
-
-
-
-
+console.log(count)
 
 
 
@@ -54,6 +49,16 @@ function updateGameboardDisplay(boardNameInDOM, playerBoard) {
     }
 }
 
+function takeShot() {
+    let board = playerBoard
+    let loc = getRandomInt(0, 99)
+
+    board.receiveAttack(loc)
+}
+
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min)
+}
 // npx webpack --watch
 
 
