@@ -5,30 +5,13 @@ import { Player } from "./Player";
 let playerBoard = new Gameboard
 let computerBoard = new Gameboard
 
-console.log(playerBoard)
-console.log(computerBoard)
-
 updateGameboardDisplay('#player-board', playerBoard.board)
 updateGameboardDisplay('#computer-board', computerBoard.board)
 
 playerBoard.placeShip('Cruiser', 3, [55, 65, 75])
 
-playerBoard.receiveAttack(5)
-playerBoard.receiveAttack(15)
-playerBoard.receiveAttack(25)
-playerBoard.receiveAttack(35)
-playerBoard.receiveAttack(85)
-playerBoard.receiveAttack(95)
 
-playerBoard.receiveAttack(55)
-playerBoard.receiveAttack(56)
-playerBoard.receiveAttack(45)
-playerBoard.receiveAttack(54)
-playerBoard.receiveAttack(65)
-playerBoard.receiveAttack(75)
-updateGameboardDisplay('#player-board', playerBoard.board)
-
-
+console.log(playerBoard.board)
 
 
 function updateGameboardDisplay(boardNameInDOM, playerBoard) {
@@ -51,8 +34,6 @@ function updateGameboardDisplay(boardNameInDOM, playerBoard) {
 
 // npx webpack --watch
 
-let comp = new Player
 
-comp.getShotLocation(playerBoard.board)
 
 

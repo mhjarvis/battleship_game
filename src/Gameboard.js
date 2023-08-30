@@ -11,9 +11,9 @@ import { Ship } from "./Ship";
 
 class Gameboard {
     constructor() {
-        this.board = new Array(100)//this.createBoard()             // holds cells, hits, misses, ships
-        this.numberOfShipsSunk = 0                  // use to check for endgame
-        this.ships = []                             // hold ship objects as they are created / placed 
+        this.board = new Array(100)//this.createBoard()     // holds cells, hits, misses, ships
+        this.numberOfShipsSunk = 0                          // use to check for endgame
+        this.ships = []                                     // hold ship objects as they are created / placed 
     }
 
     // create new Ship object, update gameboard with ship name in cells
@@ -28,35 +28,27 @@ class Gameboard {
 
     // Resolve attacks - miss, hit, update ships, update board
     receiveAttack(coordinate) {
-        let index = this.board[coordinate]
+        
+/*         let index = this.board[coordinate]
 
-        // do nothing if there has already been a  shot (miss / hit)
-        if (index === 'miss' || index === 'hit') {
-            return;                           
-        }
-        // test for empty space, add 'miss' if null
         if (index === undefined) {
-            this.board[coordinate] = 'miss'         // update this.board with 'miss' in index
+            this.board[coordinate] = 'miss'       
             console.log('miss')
         }
-        // if there is a ship there, update hits and test for sunk
         if (index != undefined && index != 'miss' && index != 'hit') {
-            let shipName = this.board[coordinate]           // hold ship name value from this.board
-            this.board[coordinate] = 'hit'                  // update this.board with 'hit' text
+            let shipName = this.board[coordinate]           
+            this.board[coordinate] = 'hit'                 
 
-            // get ship object from ships THIS NEEDS TO BE OBJECTS FOR EASIER REFERENCE
             let getShip = this.ships.find((s) => s.name === shipName)
 
-            // increase hit number
             getShip.hit()
             
-            // test whether ship is sunk
             if (getShip.checkIsSunk()) {
                 this.numberOfShipsSunk++
-                console.log('Number of Ships Sunk: ' + this.numberOfShipsSunk)      // REMOVE AFTER TESTING
+                console.log('Number of Ships Sunk: ' + this.numberOfShipsSunk)   
             }
             return
-        }
+        } */
     }
 
     // Get number of sunk ships
