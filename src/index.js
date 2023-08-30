@@ -12,9 +12,12 @@ let computerBoard = new Gameboard
 updateGameboardDisplay('#player-board', playerBoard)
 updateGameboardDisplay('#computer-board', computerBoard)
 
-
-
-playerBoard.placeShip('Cruiser', 3, [55, 65, 75])
+// initialize ships - replace
+playerBoard.placeShip('Carrier', 5, [55, 65, 75, 85, 95])
+playerBoard.placeShip('BattleShip', 4, [12, 13, 14, 15])
+playerBoard.placeShip('Destroyer', 3, [20, 30, 40])
+playerBoard.placeShip('Submarine', 3, [57, 67, 77])
+playerBoard.placeShip('Patrol Boat', 2, [98, 99])
 
 let count = 0
 
@@ -30,6 +33,7 @@ console.log(count)
 
 
 updateGameboardDisplay('#player-board', playerBoard)
+updateGameboardDisplay('#computer-board', computerBoard)
 
 function updateGameboardDisplay(boardNameInDOM, playerBoard) {
     let getBoard = document.querySelector(boardNameInDOM)
@@ -44,7 +48,11 @@ function updateGameboardDisplay(boardNameInDOM, playerBoard) {
             div.classList.add('red')
         } else if (playerBoard.board[i] === 'miss') {
             div.classList.add('blue')
-        } else if (playerBoard.board[i] === 'Cruiser') {
+        } else if (playerBoard.board[i] === 'Carrier' ||
+                   playerBoard.board[i] === 'BattleShip' ||
+                   playerBoard.board[i] === 'Destroyer' ||
+                   playerBoard.board[i] === 'Submarine' ||
+                   playerBoard.board[i] === 'Patrol Boat') {
             div.classList.add('ship-color')
         }
         getBoard.append(div)
