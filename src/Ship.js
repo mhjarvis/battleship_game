@@ -15,9 +15,11 @@ class Ship {
         this.isSunk = false
         this.cordinates = coordinates
     }
+
     hit() {
         this.timesHit++
     }
+    
     checkIsSunk() {
         if (this.length === this.timesHit) {
             this.isSunk = true;

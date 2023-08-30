@@ -10,18 +10,14 @@ updateGameboardDisplay('#computer-board', computerBoard)
 
 playerBoard.placeShip('Cruiser', 3, [55, 65, 75])
 
-
 playerBoard.receiveAttack(23)
 playerBoard.receiveAttack(55)
 playerBoard.receiveAttack(65)
 playerBoard.receiveAttack(75)
 
+let computer = new Player
 
-
-console.log(playerBoard.board)
-
-
-
+computer.takeShot()
 
 
 

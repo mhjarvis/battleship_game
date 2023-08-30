@@ -33,6 +33,7 @@ class Gameboard {
 
         if (this.board[coordinate] === undefined) {
             this.board[coordinate] = 'miss'
+            return 'miss'
         } else if (this.board[coordinate] === 'Cruiser') {
             this.board[coordinate] = 'hit'
             let s = this.ships.find((x) => x.name == shipName)
@@ -42,6 +43,7 @@ class Gameboard {
                 this.numberOfShipsSunk++
                 console.log('Number of Ships Sunk: ' + this.numberOfShipsSunk)
             }
+            return 'hit'
         } else {
             console.log('Error in: receiveAttack(coordinate)')
         }

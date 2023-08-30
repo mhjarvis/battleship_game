@@ -10,19 +10,14 @@ class Player {
     }
 
     // get a random shot location for the computer that is free of hits/misses
-    getShotLocation(arr) {
-        let val = 'need value'
+    takeShot() {
+        let loc = this.getRandomInt(0, 99)
 
-        while (val === 'need value') {
-            let location = this.getRandomInt(0, 99)     // get random number 0 - 99
+        
 
-            if (arr[location] === undefined || arr[location] === 'Cruiser') {      // find place free of shots
-                val = location                      // THIS NEEDS TO BE UPDATED
-                return val
-            } 
-            console.log('broken')
-        }
+
     }
+
 
     // random number generator
     getRandomInt(min, max) {
