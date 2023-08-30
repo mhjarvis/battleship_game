@@ -2,28 +2,30 @@ import { Gameboard } from "./Gameboard";
 import { Player } from "./Player";
 
 // Initialize Gameboard objects and populate board array
+let player = new Player('Human Player')
+let computer = new Player('Computer Player')
 let playerBoard = new Gameboard
 let computerBoard = new Gameboard
 
+
+
 updateGameboardDisplay('#player-board', playerBoard)
 updateGameboardDisplay('#computer-board', computerBoard)
+
+
 
 playerBoard.placeShip('Cruiser', 3, [55, 65, 75])
 
 let count = 0
 
 
-
-for (let i = 0; i < 20; i++) {
+// test for different shots
+for (let i = 0; i < 10; i++) {
     takeShot()
     count++
 }
 
 console.log(count)
-
-
-
-
 
 
 

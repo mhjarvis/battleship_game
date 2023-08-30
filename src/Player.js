@@ -5,23 +5,10 @@ Create Player.
 ***************************************************************/
 
 class Player {
-    constructor() {
-
+    constructor(name) {
+        this.name = name
     }
 
-    // get a random shot location for the computer that is free of hits/misses
-    takeShot(board) {
-        let loc = this.getRandomInt(0, 99)
-
-
-
-    }
-
-
-    // random number generator
-    getRandomInt(min, max) {
-        return Math.floor(Math.random() * (max - min + 1) + min)
-    }
 }
 
 export { Player }
