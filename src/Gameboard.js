@@ -11,7 +11,7 @@ import { Ship } from "./Ship";
 
 class Gameboard {
     constructor() {
-        this.board = new Array(100)//this.createBoard()     // holds cells, hits, misses, ships
+        this.board = this.createBoard()     // holds cells, hits, misses, ships
         this.numberOfShipsSunk = 0                          // use to check for endgame
         this.ships = []                                     // hold ship objects as they are created / placed 
     }
@@ -28,27 +28,23 @@ class Gameboard {
 
     // Resolve attacks - miss, hit, update ships, update board
     receiveAttack(coordinate) {
-        
-/*         let index = this.board[coordinate]
 
-        if (index === undefined) {
-            this.board[coordinate] = 'miss'       
-            console.log('miss')
-        }
-        if (index != undefined && index != 'miss' && index != 'hit') {
-            let shipName = this.board[coordinate]           
-            this.board[coordinate] = 'hit'                 
+        let shipName = this.board[coordinate]
 
-            let getShip = this.ships.find((s) => s.name === shipName)
+        if (this.board[coordinate] === undefined) {
+            this.board[coordinate] = 'miss'
+        } else if (this.board[coordinate] === 'Cruiser') {
+            this.board[coordinate] = 'hit'
+            let s = this.ships.find((x) => x.name == shipName)
+            s.hit()
 
-            getShip.hit()
-            
-            if (getShip.checkIsSunk()) {
+            if (s.checkIsSunk()) {
                 this.numberOfShipsSunk++
-                console.log('Number of Ships Sunk: ' + this.numberOfShipsSunk)   
+                console.log('Number of Ships Sunk: ' + this.numberOfShipsSunk)
             }
-            return
-        } */
+        } else {
+            console.log('Error in: receiveAttack(coordinate)')
+        }
     }
 
     // Get number of sunk ships
@@ -60,7 +56,7 @@ class Gameboard {
     createBoard() {
         let temp = []
         for (let i = 0; i < 100; i++) {
-            temp.push(0)
+            temp.push(undefined)
         }
         return temp
     }
