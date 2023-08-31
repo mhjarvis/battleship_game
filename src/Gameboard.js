@@ -7,6 +7,7 @@ Create Gameboard factory.
     5. Gameboards should be able to report whether or not all of their ships have been sunk.
 ***************************************************************/
 
+
 import { Ship } from "./Ship";
 
 class Gameboard {
