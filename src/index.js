@@ -25,16 +25,6 @@ computerBoard.placeShip('Destroyer', 3, [20, 30, 40])
 computerBoard.placeShip('Submarine', 3, [67, 77, 87])
 computerBoard.placeShip('Patrol Boat', 2, [91, 92])
 
-/* let count = 0
-
-
-for (let i = 0; i < 10; i++) {
-    takeShot()
-    count++
-}
-
-console.log(count) */
-
 
 
 updateGameboardDisplay('#player-board', playerBoard)
