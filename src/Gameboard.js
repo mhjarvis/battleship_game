@@ -6,4 +6,27 @@ Create Gameboard factory.
     4. Gameboards should keep track of missed attacks so they can display them properly.
     5. Gameboards should be able to report whether or not all of their ships have been sunk.
 ***************************************************************/
+import { Ship } from './Ship';
 
+class Gameboard {
+    constructor() {
+        this.board = this.createBoard();
+        this.numberOfShipsSunk = 0;
+        this.ships = [];
+    }
+
+    createBoard() {
+        let temp = [];
+        for (let i = 1; i <= 100; i++) {
+            temp.push(undefined);
+        }
+        return temp;
+    }
+
+    placeShip(name, length, coordinates) {
+        let ship = new Ship(name, length, coordinates);
+        this.ships.push(ship);
+    }
+}
+
+export { Gameboard }

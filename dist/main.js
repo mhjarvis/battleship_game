@@ -1,1 +1,1 @@
-console.log("help");
+(()=>{"use strict";class s{constructor(s,t,i){this.name=s,this.length=t,this.timesHit=0,this.isSunk=!1,this.coordinates=[]}hit(){this.timesHit++}isSunk(){if(this.length===this.timesHit)return this.isSunk=!0,console.log(`${this.name} is Sunk!`),!0}}const t=new class{constructor(){this.board=this.createBoard(),this.numberOfShipsSunk=0,this.ships=[]}createBoard(){let s=[];for(let t=1;t<=100;t++)s.push(void 0);return s}placeShip(t,i,e){let h=new s(t,i,e);this.ships.push(h)}};console.log(t),console.log("help")})();
