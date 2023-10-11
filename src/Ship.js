@@ -7,26 +7,3 @@ Begin your app by creating the Ship factory function.
 REMEMBER you only have to test your object’s public interface. Only methods or properties that are used outside of your ‘ship’ object need unit tests.
 ***************************************************************/
 
-class Ship {
-    constructor(name, length, coordinates) {
-        this.name = name
-        this.length = length
-        this.timesHit = 0
-        this.isSunk = false
-        this.cordinates = coordinates
-    }
-
-    hit() {
-        this.timesHit++
-    }
-    
-    checkIsSunk() {
-        if (this.length === this.timesHit) {
-            this.isSunk = true;
-            console.log(this.name + ' is Sunk!')
-            return true;
-        }
-    }
-}
-
-export { Ship }
