@@ -1,5 +1,5 @@
-import { GameLoop } from './GameLoop.js'
+import { gameLoop } from './gameLoop.js'
 
-const game = new GameLoop;
+gameLoop();
 
 // npx webpack --watch

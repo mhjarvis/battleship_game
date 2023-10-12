@@ -1,10 +1,31 @@
+import { Gameboard } from "./Gameboard"
+import { Player } from "./Player"
+import { Ship } from "./Ship"
 
+function gameLoop() {
 
-class GameLoop {
-    constructor() {
-
+    console.log('This is the gameloop starting...')
     
-    }
+    const computerBoard = new Gameboard();
+    const playerBoard = new Gameboard();
+    
+    console.log(`Creating computerBoard and playerBoard:`)
+    console.log(JSON.stringify(computerBoard))
+    console.log(JSON.stringify(playerBoard))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
-export { GameLoop }
+export { gameLoop }
