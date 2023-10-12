@@ -12,7 +12,13 @@ class Gameboard {
     constructor() {
         this.board = this.createBoard();
         this.numberOfShipsSunk = 0;
-        this.ships = [];
+        this.ships = [
+            this.createShip("Destroyer", 2),
+            this.createShip("Submarine", 3),
+            this.createShip("Cruiser", 3),
+            this.createShip("Battleship", 4),
+            this.createShip("Carrier", 5)
+        ];
     }
 
     createBoard() {
@@ -23,12 +29,9 @@ class Gameboard {
         return temp;
     }
 
-
-    
-
-    placeShip(name, length) {
+    createShip(name, length) {
         let ship = new Ship(name, length);
-        this.ships.push(ship);
+        return ship;
     }
 }
 
