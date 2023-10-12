@@ -3,12 +3,14 @@ import { Player } from "./Player"
 import { Ship } from "./Ship"
 
 function gameLoop() {
-
-    console.log('This is the gameloop starting...')
     
-    const computerBoard = new Gameboard();
     const playerBoard = new Gameboard();
-    
+    const computerBoard = new Gameboard();
+
+    showBoardsInDOM('#player-board', playerBoard);
+    showBoardsInDOM('#computer-board', computerBoard);
+
+
     console.log(`Creating computerBoard and playerBoard:`)
     console.log(JSON.stringify(computerBoard))
     console.log(JSON.stringify(playerBoard))
@@ -26,6 +28,15 @@ function gameLoop() {
 
 
 
+}
+
+function showBoardsInDOM(name, gBoard) {
+    const board = document.querySelector(name);
+
+    for (let i = 0; i < gBoard.board.length; i++) {
+        const div = document.createElement('div');
+        board.appendChild(div)
+    }
 }
 
 export { gameLoop }
