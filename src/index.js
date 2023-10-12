@@ -1,8 +1,5 @@
-import { Gameboard } from './Gameboard.js'
+import { GameLoop } from './GameLoop.js'
+
+const game = new GameLoop;
+
 // npx webpack --watch
-
-
-const gameboard = new Gameboard();
-console.log(gameboard);
-
-console.log('help')

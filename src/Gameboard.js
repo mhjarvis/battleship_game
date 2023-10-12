@@ -23,6 +23,8 @@ class Gameboard {
         return temp;
     }
 
+    
+
     placeShip(name, length, coordinates) {
         let ship = new Ship(name, length, coordinates);
         this.ships.push(ship);
