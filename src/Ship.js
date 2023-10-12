@@ -8,12 +8,11 @@ REMEMBER you only have to test your object’s public interface. Only methods or
 ***************************************************************/
 
 class Ship {
-    constructor(name, length, coordinates) {
+    constructor(name, length) {
         this.name = name;
         this.length = length;
         this.timesHit = 0;
         this.isSunk = false;
-        this.coordinates = [];
     }
 
     hit() {

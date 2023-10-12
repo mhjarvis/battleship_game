@@ -23,10 +23,11 @@ class Gameboard {
         return temp;
     }
 
+
     
 
-    placeShip(name, length, coordinates) {
-        let ship = new Ship(name, length, coordinates);
+    placeShip(name, length) {
+        let ship = new Ship(name, length);
         this.ships.push(ship);
     }
 }
