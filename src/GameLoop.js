@@ -24,7 +24,7 @@ function gameLoop() {
 
 
 
-
+    // added div elements, without classes or ids or content;
 
 
 
