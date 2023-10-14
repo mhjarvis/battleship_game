@@ -35,6 +35,20 @@ class Gameboard {
         return ship;
     }
 
+    // Initial setup; auto-place ships
+
+    autoPlace() {
+        for(let i = 0; i < this.ships.length; i++) {
+            let test = false;
+
+            do {
+                let testNum = this.getRandomLocation();
+                test = this.placeShip(this.prefix + testNum, 'vertical', this.ships[i].name, this.ships[i].length);
+            } while(test === false)
+
+        }
+    }
+
     // Function checks and updates legal ship placement
     placeShip(gridSquare, orientation, name, length) {
         let squareToNumber = parseInt(gridSquare.slice(1));
@@ -45,7 +59,7 @@ class Gameboard {
 
             for(let i = 0; i < length; i++) {
                 if(this.board[testNumber]) {
-                    return;
+                    return false;
                 }
                 testNumber += 10;
             }
@@ -56,7 +70,7 @@ class Gameboard {
                 document.getElementById(gridTemp).style.backgroundColor = 'gray';
                 squareToNumber += 10;
                 gridTemp = gridSquare.slice(0, 1) + squareToNumber;
-            } return;
+            } return true;
         }
         if(orientation === 'horizontal' && squareToNumber > length && (squareToNumber % 10 >= length || squareToNumber % 10 === 0)) {
             let gridTemp = gridSquare;
@@ -64,7 +78,7 @@ class Gameboard {
 
             for(let i = 0; i < length; i++) {
                 if(this.board[testNumber]) {
-                    return
+                    return false;
                 }
                 testNumber = testNumber - 1;
             }
@@ -74,9 +88,9 @@ class Gameboard {
                 document.getElementById(gridTemp).style.backgroundColor = 'gray';
                 squareToNumber -= 1;
                 gridTemp = gridSquare.slice(0, 1) + squareToNumber;
-            } return;
+            } return true;
         }
-        return;
+        return false;
     }
 
     getRandomLocation() {
