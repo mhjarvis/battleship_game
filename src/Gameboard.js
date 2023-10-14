@@ -33,6 +33,26 @@ class Gameboard {
         let ship = new Ship(name, length);
         return ship;
     }
+
+    placeShip(gridSquare, orientation, name, length) {
+        let squareToNumber = parseInt(gridSquare.slice(1));
+
+        if(orientation === 'vertical' && ((length - 1) * 10 + squareToNumber) <= 100) {
+            let gridTemp = gridSquare;
+            for(let i = 0; i < length; i++) {
+                this.board[squareToNumber] = name;
+                document.getElementById(gridTemp).style.backgroundColor = 'gray';
+                squareToNumber += 10;
+                gridTemp = gridSquare.slice(0, 1) + squareToNumber;
+            }
+        } else {
+            return;
+        }
+
+
+
+
+    }
 }
 
 export { Gameboard }

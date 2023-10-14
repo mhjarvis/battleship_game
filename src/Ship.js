@@ -13,7 +13,7 @@ class Ship {
         this.length = length;
         this.timesHit = 0;
         this.isSunk = false;
-        this.orientation = vertical;
+        this.orientation = 'vertical';
     }
 
     hit() {
