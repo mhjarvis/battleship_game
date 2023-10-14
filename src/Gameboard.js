@@ -9,7 +9,7 @@ Create Gameboard factory.
 import { Ship } from './Ship';
 
 class Gameboard {
-    constructor() {
+    constructor(prefix) {
         this.board = this.createBoard();
         this.numberOfShipsSunk = 0;
         this.ships = [
@@ -19,6 +19,7 @@ class Gameboard {
             this.createShip("Battleship", 4),
             this.createShip("Carrier", 5)
         ];
+        this.prefix = prefix;
     }
 
     createBoard() {
@@ -34,6 +35,7 @@ class Gameboard {
         return ship;
     }
 
+    // Function checks and updates legal ship placement
     placeShip(gridSquare, orientation, name, length) {
         let squareToNumber = parseInt(gridSquare.slice(1));
 
@@ -75,6 +77,10 @@ class Gameboard {
             } return;
         }
         return;
+    }
+
+    getRandomLocation() {
+        return Math.floor(Math.random() * 100) + 1;
     }
 }
 

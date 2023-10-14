@@ -4,8 +4,8 @@ import { Ship } from "./Ship"
 
 function gameLoop() {
     
-    const playerBoard = new Gameboard();
-    const computerBoard = new Gameboard();
+    const playerBoard = new Gameboard('p');
+    const computerBoard = new Gameboard('c');
 
 
     showBoardsInDOM('#player-board', playerBoard, 'p');
