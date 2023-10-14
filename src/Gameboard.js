@@ -66,7 +66,8 @@ class Gameboard {
                 if (this.board[squareToNumber] != null) return;
                 this.board[squareToNumber] = name;
                 document.getElementById(gridTemp).style.backgroundColor = 'gray';
-                document.getElementById(gridTemp).innerText = name.slice(0, 1)
+                document.getElementById(gridTemp).innerText = name.slice(0, 1);
+                document.getElementById(gridTemp).classList.add(name);
                 squareToNumber += 10;
                 gridTemp = gridSquare.slice(0, 1) + squareToNumber;
             } return true;

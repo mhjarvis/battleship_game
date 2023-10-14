@@ -13,6 +13,8 @@ function gameLoop() {
     playerBoard.autoPlace();
     computerBoard.autoPlace();
 
+    setDragable();
+
     console.log(JSON.stringify(computerBoard))
     console.log(JSON.stringify(playerBoard))
 
