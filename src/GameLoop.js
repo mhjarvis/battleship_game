@@ -11,8 +11,10 @@ function gameLoop() {
     showBoardsInDOM('#player-board', playerBoard, 'p');
     showBoardsInDOM('#computer-board', computerBoard, 'c');
 
+    // place test player ships
     playerBoard.placeShip('p4', 'vertical', 'Battleship', 4)
     playerBoard.placeShip('p88', 'vertical', 'Destroyer', 2)
+    playerBoard.placeShip('p20', 'horizontal', 'Carrier', 5)
 
     console.log(`Creating computerBoard and playerBoard:`)
     console.log(JSON.stringify(computerBoard))

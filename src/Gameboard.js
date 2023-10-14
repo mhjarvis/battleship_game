@@ -37,21 +37,44 @@ class Gameboard {
     placeShip(gridSquare, orientation, name, length) {
         let squareToNumber = parseInt(gridSquare.slice(1));
 
-        if(orientation === 'vertical' && ((length - 1) * 10 + squareToNumber) <= 100) {
+        if (orientation === 'vertical' && ((length - 1) * 10 + squareToNumber) <= 100) {
             let gridTemp = gridSquare;
+            let testNumber = squareToNumber;
+
             for(let i = 0; i < length; i++) {
+                if(this.board[testNumber]) {
+                    return;
+                }
+                testNumber += 10;
+            }
+
+            for(let i = 0; i < length; i++) {
+                if (this.board[squareToNumber] != null) return;
                 this.board[squareToNumber] = name;
                 document.getElementById(gridTemp).style.backgroundColor = 'gray';
                 squareToNumber += 10;
                 gridTemp = gridSquare.slice(0, 1) + squareToNumber;
-            }
-        } else {
-            return;
+            } return;
         }
+        if(orientation === 'horizontal' && squareToNumber > length && (squareToNumber % 10 >= length || squareToNumber % 10 === 0)) {
+            let gridTemp = gridSquare;
+            let testNumber = squareToNumber;
 
+            for(let i = 0; i < length; i++) {
+                if(this.board[testNumber]) {
+                    return
+                }
+                testNumber = testNumber - 1;
+            }
 
-
-
+            for(let i = 0; i < length; i++) {
+                this.board[squareToNumber] = name;
+                document.getElementById(gridTemp).style.backgroundColor = 'gray';
+                squareToNumber -= 1;
+                gridTemp = gridSquare.slice(0, 1) + squareToNumber;
+            } return;
+        }
+        return;
     }
 }
 
