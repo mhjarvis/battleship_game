@@ -13,7 +13,7 @@ class Ship {
         this.length = length;
         this.timesHit = 0;
         this.isSunk = false;
-        this.orientation = 'vertical';
+        this.orientation = this.getRandomOrientation();
     }
 
     hit() {
@@ -26,6 +26,12 @@ class Ship {
             console.log(`${this.name} is Sunk!`);
             return true;
         }
+    }
+
+    getRandomOrientation() {
+        let val = Math.random() < 0.5;
+        if (val) return 'vertical';
+        return 'horizontal';
     }
 }
 
