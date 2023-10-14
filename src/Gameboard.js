@@ -36,16 +36,14 @@ class Gameboard {
     }
 
     // Initial setup; auto-place ships
-
     autoPlace() {
         for(let i = 0; i < this.ships.length; i++) {
             let test = false;
 
             do {
                 let testNum = this.getRandomLocation();
-                test = this.placeShip(this.prefix + testNum, 'vertical', this.ships[i].name, this.ships[i].length);
+                test = this.placeShip(this.prefix + testNum, this.ships[i].orientation, this.ships[i].name, this.ships[i].length);
             } while(test === false)
-
         }
     }
 
@@ -68,6 +66,7 @@ class Gameboard {
                 if (this.board[squareToNumber] != null) return;
                 this.board[squareToNumber] = name;
                 document.getElementById(gridTemp).style.backgroundColor = 'gray';
+                document.getElementById(gridTemp).innerText = name.slice(0, 1)
                 squareToNumber += 10;
                 gridTemp = gridSquare.slice(0, 1) + squareToNumber;
             } return true;
@@ -86,6 +85,7 @@ class Gameboard {
             for(let i = 0; i < length; i++) {
                 this.board[squareToNumber] = name;
                 document.getElementById(gridTemp).style.backgroundColor = 'gray';
+                document.getElementById(gridTemp).innerText = name.slice(0, 1)
                 squareToNumber -= 1;
                 gridTemp = gridSquare.slice(0, 1) + squareToNumber;
             } return true;

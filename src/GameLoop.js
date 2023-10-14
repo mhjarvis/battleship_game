@@ -13,7 +13,6 @@ function gameLoop() {
     playerBoard.autoPlace();
     computerBoard.autoPlace();
 
-    console.log(`Creating computerBoard and playerBoard:`)
     console.log(JSON.stringify(computerBoard))
     console.log(JSON.stringify(playerBoard))
 
