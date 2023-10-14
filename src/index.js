@@ -1,4 +1,4 @@
-import { gameLoop } from './gameLoop.js'
+import { gameLoop } from "./GameLoop";
 
 gameLoop();
 

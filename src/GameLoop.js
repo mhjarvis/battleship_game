@@ -28,7 +28,7 @@ function showBoardsInDOM(name, gBoard, prefix) {
 
     for (let i = 0; i < gBoard.board.length; i++) {
         const div = document.createElement('div');
-        div.class = grid-cell;
+        div.classList.add('grid-cell');
         div.id = prefix + (i + 1);
         board.appendChild(div)
     }
