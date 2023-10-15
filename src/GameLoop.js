@@ -1,8 +1,7 @@
 import { Gameboard } from "./Gameboard"
 import { Player } from "./Player"
 import { Ship } from "./Ship"
-import { onDragStart } from "./setDragable";
-
+import { addListeners } from "./addListeners.js"
 function gameLoop() {
     
     const playerBoard = new Gameboard('p');
@@ -14,6 +13,8 @@ function gameLoop() {
     //playerBoard.autoPlace();
     computerBoard.autoPlace();
 
+    // Initialize event listeners for draggable events
+    addListeners();
 
     console.log(JSON.stringify(computerBoard))
     console.log(JSON.stringify(playerBoard))
