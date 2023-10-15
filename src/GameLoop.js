@@ -1,7 +1,7 @@
 import { Gameboard } from "./Gameboard"
 import { Player } from "./Player"
 import { Ship } from "./Ship"
-import { setDragable } from "./setDragable";
+import { onDragStart } from "./setDragable";
 
 function gameLoop() {
     
