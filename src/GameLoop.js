@@ -1,6 +1,7 @@
 import { Gameboard } from "./Gameboard"
 import { Player } from "./Player"
 import { Ship } from "./Ship"
+import { setDragable } from "./setDragable";
 
 function gameLoop() {
     
@@ -10,10 +11,9 @@ function gameLoop() {
     showBoardsInDOM('#player-board', playerBoard, 'p');
     showBoardsInDOM('#computer-board', computerBoard, 'c');
 
-    playerBoard.autoPlace();
+    //playerBoard.autoPlace();
     computerBoard.autoPlace();
 
-    setDragable();
 
     console.log(JSON.stringify(computerBoard))
     console.log(JSON.stringify(playerBoard))

@@ -1,4 +1,4 @@
 
-export default function setDragable() {
-    const ships = document.querySelector('')
+export function setDragable() {
+    const ship = document.querySelectorAll('.Battleship');
 }
