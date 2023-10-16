@@ -7,10 +7,14 @@ export function addListeners() {
     const submarine = document.getElementById('submarine');
     const destroyer = document.getElementById('destroyer');
 
-    let arr = [carrier, battleship, cruiser, submarine, destroyer];
-    let gridCell = document.querySelectorAll('.grid-cell');
+    let ships = [carrier, battleship, cruiser, submarine, destroyer];
+    let cells = document.querySelectorAll('.grid-cell');
 
-    
+
+
+
+
+
     
 /*     for (let a of arr) {
         a.addEventListener('dragstart', (event) => {
@@ -40,3 +44,8 @@ export function addListeners() {
 
 
 }
+
+function dragstart_handler(ev) {
+    ev.dataTransfer.setData('text/plain', ev.target.id);
+}
+
