@@ -14,9 +14,14 @@ const destroyer = document.getElementById('destroyer');
 let ships = [carrier, battleship, cruiser, submarine, destroyer];
 let cells = document.querySelectorAll('.grid-cell');
 
+let dragged = null;
+let length = null;
+
 ships.forEach(function (ship) {
     ship.addEventListener('dragstart', (e) => {
-        console.log('oneventstart');
+        dragged = e.target;
+        length = e.length;
+        console.log(dragged, length)
     })
     ship.addEventListener('drag', (e) => {
         console.log('element is being dragged');
@@ -27,6 +32,18 @@ ships.forEach(function (ship) {
 })
 
 cells.forEach(function (cell) {
-    
+    cell.addEventListener('dragenter', (e) => {
+        console.log('entering cell');
+    })
+    cell.addEventListener('dragleave', (e) => {
+        console.log('leaving cell');
+    })
+    cell.addEventListener('dragover', (e) => {
+        e.preventDefault();     // include to ensure drop event fires
+    })
+    cell.addEventListener('drop', (e) => {
+        e.preventDefault();     // prevent default action (open as link)
+        e.target.appendChild(dragged);
+    })
 })
 
