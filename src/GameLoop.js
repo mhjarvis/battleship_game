@@ -13,12 +13,12 @@ function gameLoop() {
     //playerBoard.autoPlace();
     computerBoard.autoPlace();
 
+    addListeners();
     // Initialize event listeners for draggable events
-    //addListeners();
 
-    //console.log(JSON.stringify(computerBoard))
-    //console.log(JSON.stringify(playerBoard))
 
+    console.log(JSON.stringify(playerBoard))
+    console.log(JSON.stringify(computerBoard))
 
 
 
