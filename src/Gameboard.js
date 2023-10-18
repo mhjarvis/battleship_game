@@ -13,11 +13,11 @@ class Gameboard {
         this.board = this.createBoard();
         this.numberOfShipsSunk = 0;
         this.ships = [
-            this.createShip("Destroyer", 2),
-            this.createShip("Submarine", 3),
-            this.createShip("Cruiser", 3),
-            this.createShip("Battleship", 4),
-            this.createShip("Carrier", 5)
+            this.createShip("destroyer", 2),
+            this.createShip("submarine", 3),
+            this.createShip("cruiser", 3),
+            this.createShip("battleship", 4),
+            this.createShip("carrier", 5)
         ];
         this.prefix = prefix;
     }
@@ -35,8 +35,12 @@ class Gameboard {
         return ship;
     }
 
+    getRandomLocation() {
+        return Math.floor(Math.random() * 100) + 1;
+    }
+
     // Initial setup; auto-place ships
-    autoPlace() {
+/*     autoPlace() {
         for(let i = 0; i < this.ships.length; i++) {
             let test = false;
 
@@ -45,10 +49,10 @@ class Gameboard {
                 test = this.placeShip(this.prefix + testNum, this.ships[i].orientation, this.ships[i].name, this.ships[i].length);
             } while(test === false)
         }
-    }
+    } */
 
     // Function checks and updates legal ship placement
-    placeShip(gridSquare, orientation, name, length) {
+/*     placeShip(gridSquare, orientation, name, length) {
         let squareToNumber = parseInt(gridSquare.slice(1));
 
         if (orientation === 'vertical' && ((length - 1) * 10 + squareToNumber) <= 100) {
@@ -92,11 +96,8 @@ class Gameboard {
             } return true;
         }
         return false;
-    }
+    } */
 
-    getRandomLocation() {
-        return Math.floor(Math.random() * 100) + 1;
-    }
 }
 
 export { Gameboard }

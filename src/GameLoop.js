@@ -11,9 +11,9 @@ function gameLoop() {
     showBoardsInDOM('#computer-board', computerBoard, 'c');
 
     //playerBoard.autoPlace();
-    computerBoard.autoPlace();
+    //computerBoard.autoPlace();
 
-    addListeners();
+    //addListeners();
     // Initialize event listeners for draggable events
 
 
