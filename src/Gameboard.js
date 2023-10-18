@@ -50,7 +50,7 @@ class Gameboard {
 
         for (let i = 0; i < toPlace.length; i++) {
             let test = false;
-
+            this.placeShip(toPlace[i].id);
 
 /*             do {
                 let random = this.getRandomLocation();
@@ -58,6 +58,18 @@ class Gameboard {
             } while (test === false); */
         }
         console.log('Uncomment loop after fixing autoplace function');
+    }
+
+    placeShip(ident) {
+        let shipID = document.getElementById(ident);
+        let random = this.getRandomLocation();
+        let gridSpace = document.getElementById('p' + random);
+
+        gridSpace.appendChild(shipID)
+
+        console.log(shipID, gridSpace)
+
+
     }
 
 
