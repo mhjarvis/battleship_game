@@ -33,10 +33,10 @@ ships.forEach(function (ship) {
 
 cells.forEach(function (cell) {
     cell.addEventListener('dragenter', (e) => {
-        console.log('entering cell');
+       // document.getElementById(cell.id).style.backgroundColor = 'gray';
     })
     cell.addEventListener('dragleave', (e) => {
-        console.log('leaving cell');
+        document.getElementById(cell.id).style.backgroundColor = 'white';
     })
     cell.addEventListener('dragover', (e) => {
         e.preventDefault();     // include to ensure drop event fires
