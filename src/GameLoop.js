@@ -10,6 +10,8 @@ function gameLoop() {
     showBoardsInDOM('#player-board', playerBoard, 'p');
     showBoardsInDOM('#computer-board', computerBoard, 'c');
 
+    playerBoard.randomPlace();
+
     //playerBoard.autoPlace();
     //computerBoard.autoPlace();
 

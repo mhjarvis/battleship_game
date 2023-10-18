@@ -39,6 +39,15 @@ class Gameboard {
         return Math.floor(Math.random() * 100) + 1;
     }
 
+    randomPlace() {
+        const carrier = document.getElementById('carrier');
+        const battleship = document.getElementById('battleship');
+        const cruiser = document.getElementById('cruiser');
+        const submarine = document.getElementById('submarine');
+        const destroyer = document.getElementById('destroyer');
+
+    }
+
     // Initial setup; auto-place ships
 /*     autoPlace() {
         for(let i = 0; i < this.ships.length; i++) {
