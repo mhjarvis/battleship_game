@@ -4,18 +4,21 @@ import { Ship } from "./Ship"
 import { addListeners } from "./addListeners.js"
 function gameLoop() {
     
+    // create both board objects
     const playerBoard = new Gameboard('p');
     const computerBoard = new Gameboard('c');
 
+    // show player boards as grid elements; add ids, etc.
     showBoardsInDOM('#player-board', playerBoard, 'p');
     showBoardsInDOM('#computer-board', computerBoard, 'c');
 
+    // randomly place player ship elements
     playerBoard.randomPlace();
 
     //playerBoard.autoPlace();
     //computerBoard.autoPlace();
 
-    //addListeners();
+    addListeners();
     // Initialize event listeners for draggable events
 
 
