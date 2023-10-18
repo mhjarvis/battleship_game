@@ -65,15 +65,16 @@ class Gameboard {
         let random = this.getRandomLocation();
         let gridSpace = document.getElementById('p' + random);
 
+        this.checkValidSpace();
         gridSpace.appendChild(shipID)
 
-        console.log(shipID, gridSpace)
 
 
     }
 
+    checkValidSpace() {
 
-
+    }
 
 
     // Initial setup; auto-place ships
