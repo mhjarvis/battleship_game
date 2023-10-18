@@ -46,7 +46,23 @@ class Gameboard {
         const submarine = document.getElementById('submarine');
         const destroyer = document.getElementById('destroyer');
 
+        let toPlace = [carrier, battleship, cruiser, submarine, destroyer];
+
+        for (let i = 0; i < toPlace.length; i++) {
+            let test = false;
+
+
+/*             do {
+                let random = this.getRandomLocation();
+                test = this.placeShip(toPlace[i].id);
+            } while (test === false); */
+        }
+        console.log('Uncomment loop after fixing autoplace function');
     }
+
+
+
+
 
     // Initial setup; auto-place ships
 /*     autoPlace() {
