@@ -1,6 +1,7 @@
 
-export function addListeners() {
-    
+
+function addListeners() {
+
     const carrier = document.getElementById('carrier');
     const battleship = document.getElementById('battleship');
     const cruiser = document.getElementById('cruiser');
@@ -10,42 +11,39 @@ export function addListeners() {
     let ships = [carrier, battleship, cruiser, submarine, destroyer];
     let cells = document.querySelectorAll('.grid-cell');
 
+    let dragged = null;
+    let length = null;
 
-
-
-
-
-    
-/*     for (let a of arr) {
-        a.addEventListener('dragstart', (event) => {
-            console.log('sdfsf');
+    ships.forEach(function (ship) {
+        ship.addEventListener('dragstart', (e) => {
+            dragged = e.target;
+            length = e.length;
+            console.log(dragged, length)
         })
-        a.addEventListener('dragend', (event) => {
-            event.preventDefault();
+        ship.addEventListener('drag', (e) => {
+            console.log('element is being dragged');
         })
-    } */
+        ship.addEventListener('dragend', (e) => {
+            console.log('element is done being dragged');
+        })
+    })
 
-/*     for (let g of gridCell) {
-        g.addEventListener('dragenter', (event) => {
-            console.log('poo')
-            event.preventDefault();
+    cells.forEach(function (cell) {
+        cell.addEventListener('dragenter', (e) => {
+        // document.getElementById(cell.id).style.backgroundColor = 'gray';
         })
-        g.addEventListener('ondragover', (event) => {
-            event.preventDefault();
+        cell.addEventListener('dragleave', (e) => {
+            document.getElementById(cell.id).style.backgroundColor = 'white';
         })
-        g.addEventListener('ondragleave', (event) => {
-            event.preventDefault();
+        cell.addEventListener('dragover', (e) => {
+            e.preventDefault();     // include to ensure drop event fires
         })
-        g.addEventListener('ondrop', (event) => {
-            event.preventDefault();
-            console.log('wefwfewewfwefewff')
+        cell.addEventListener('drop', (e) => {
+            e.preventDefault();     // prevent default action (open as link)
+            e.target.appendChild(dragged);
         })
-    } */
-
+    })
 
 }
 
-function dragstart_handler(ev) {
-    ev.dataTransfer.setData('text/plain', ev.target.id);
-}
-
+export { addListeners }
