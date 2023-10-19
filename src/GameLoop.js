@@ -25,8 +25,6 @@ function gameLoop() {
     console.log(JSON.stringify(playerBoard))
     console.log(JSON.stringify(computerBoard))
 
-
-
 }
 
 // Create board and append to DOM element
