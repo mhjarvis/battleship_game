@@ -9,6 +9,7 @@ function gameLoop() {
     const computerBoard = new Gameboard('c');
 
     // show player boards as grid elements; add ids, etc.
+    // this creates the onboard containers only; it does not add ship objects
     showBoardsInDOM('#player-board', playerBoard, 'p');
     showBoardsInDOM('#computer-board', computerBoard, 'c');
 
