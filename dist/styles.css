@@ -88,35 +88,35 @@ body {
 .carrier {
     width: 158px;
     height: 30px;
-    background-color: blue;
+    background-color: ;
     border: 1px solid black;
 }
 
 .battleship {
     width: 126px;
     height: 30px;
-    background-color: red;
+    background-color: ;
     border: 1px solid black;
 }
 
 .cruiser {
     width: 94px;
     height: 30px;
-    background-color: green;
+    background-color: ;
     border: 1px solid black;
 }
 
 .submarine {
     width: 94px;
     height: 30px;
-    background-color: black;
+    background-color: ;
     border: 1px solid black;
 }
 
 .destroyer {
     width: 62px;
     height: 30px;
-    background-color: orange;
+    background-color: ;
     border: 1px solid black;
 }
 
