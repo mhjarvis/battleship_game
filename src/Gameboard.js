@@ -38,8 +38,24 @@ class Gameboard {
     getRandomLocation() {
         return Math.floor(Math.random() * 100) + 1;
     }
+}
 
-    randomPlace() {
+export { Gameboard }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*     randomPlace() {
         const carrier = document.getElementById('carrier');
         const battleship = document.getElementById('battleship');
         const cruiser = document.getElementById('cruiser');
@@ -52,15 +68,12 @@ class Gameboard {
             let test = false;
             this.placeShip(toPlace[i].id);
 
-/*             do {
-                let random = this.getRandomLocation();
-                test = this.placeShip(toPlace[i].id);
-            } while (test === false); */
+
         }
         console.log('Uncomment loop after fixing autoplace function');
-    }
+    } */
 
-    placeShip(ident) {
+/*     placeShip(ident) {
         let shipID = document.getElementById(ident);
         let random = this.getRandomLocation();
         let gridSpace = document.getElementById('p' + random);
@@ -74,7 +87,7 @@ class Gameboard {
 
     checkValidSpace() {
 
-    }
+    } */
 
 
     // Initial setup; auto-place ships
@@ -136,6 +149,4 @@ class Gameboard {
         return false;
     } */
 
-}
 
-export { Gameboard }
