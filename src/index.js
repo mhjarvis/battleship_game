@@ -1,7 +1,4 @@
-import { Gameboard } from "./Gameboard";
+import { gameLoop } from "./GameLoop";
 
-let x = new Gameboard;
-
-
-
+gameLoop();
 // npx webpack --watch
