@@ -54,3 +54,51 @@ h1 {
     align-items: center;
     justify-content: center;
 }
+
+/*************************************/ 
+/********** SHIP CONTAINER ***********/
+/*************************************/ 
+
+.ship-container {
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 300px;
+    height: 300px;
+    border: 2px solid black;
+}
+
+.ship-piece {
+    border: 1px solid black
+}
+
+#carrier {
+    background-color: blue;
+    width: 30px;
+    height: 150px;
+}
+
+#battleship {
+    background-color: red;
+    width: 30px;
+    height: 120px;
+}
+
+#cruiser {
+    background-color: orange;
+    width: 30px;
+    height: 90px;
+}
+
+#submarine {
+    background-color: green;
+    width: 30px;
+    height: 90px;
+}
+
+#patrolboat {
+    background-color: yellow;
+    width: 30px;
+    height: 60px;
+}
