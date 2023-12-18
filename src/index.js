@@ -1,9 +1,6 @@
+import { Gameboard } from "./Gameboard";
 
-
-
-
-
-
+let x = new Gameboard;
 
 
 
