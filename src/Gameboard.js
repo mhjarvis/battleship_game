@@ -18,7 +18,7 @@ class Gameboard {
         for (let i = 0; i < 100; i++) {
             arr.push(undefined);
         }
-        console.log(arr)
+        //console.log(arr)
         return arr;
     }
     // Use ship class to create individual ships
