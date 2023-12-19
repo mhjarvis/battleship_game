@@ -24,6 +24,14 @@ body {
     overflow-x: hidden;
 }
 
+.rotate-right {
+    transform: rotate(90deg);
+}
+
+.rotate-left {
+    transform: rotate(-90deg);
+}
+
 /*************************************/ 
 /************ BOARD AREA *************/
 /*************************************/ 
@@ -59,46 +67,49 @@ h1 {
 /********** SHIP CONTAINER ***********/
 /*************************************/ 
 
-.ship-container {
+#flip {
     margin-top: 100px;
+}
+
+.ship-container {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
-    width: 300px;
-    height: 300px;
-    border: 2px solid black;
+    justify-content: center;
+    border: 1px solid black;
+    margin: 10px;
 }
 
 .ship-piece {
-    border: 1px solid black
+    border: 1px solid black;
+    margin: 10px;
 }
 
 #carrier {
     background-color: blue;
     width: 30px;
-    height: 150px;
+    height: 158px;
 }
 
 #battleship {
     background-color: red;
     width: 30px;
-    height: 120px;
+    height: 126px;
 }
 
 #cruiser {
     background-color: orange;
     width: 30px;
-    height: 90px;
+    height: 94px;
 }
 
 #submarine {
     background-color: green;
     width: 30px;
-    height: 90px;
+    height: 94px;
 }
 
 #patrolboat {
     background-color: yellow;
     width: 30px;
-    height: 60px;
+    height: 62px;
 }
