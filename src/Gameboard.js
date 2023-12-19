@@ -35,7 +35,7 @@ class Gameboard {
         return this.numberOfShipsSunk === 5;
     }
 
-    
+
 
 }
 

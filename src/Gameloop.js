@@ -1,4 +1,6 @@
-import { Gameboard } from "./Gameboard"
+import { Gameboard } from "./Gameboard";
+import { deployListeners } from './EventListeners';
+
 
 function gameLoop() {
 
@@ -9,6 +11,7 @@ function gameLoop() {
     createBoardInDOM(playerBoard, 'player-area')
     createBoardInDOM(computerBoard, 'computer-area')
 
+    deployListeners();
 
 
     function createBoardInDOM(player, tag) {
