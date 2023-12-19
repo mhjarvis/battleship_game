@@ -5,7 +5,8 @@ function deployListeners() {
     const shipContainer = document.querySelector('.ship-container');
 
 
-    // FLIP Button to turn ships sideways
+    // FLIP Button changes height/width of each element
+    // There may be an easier method for doing this
     flip.addEventListener('click', () => {
         for (let ship of ships) {
             let id = document.querySelector(`#${ship.id}`);
