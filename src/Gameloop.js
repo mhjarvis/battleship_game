@@ -1,18 +1,18 @@
 import { Gameboard } from "./Gameboard";
 import { deployListeners } from './EventListeners';
 
+let playerBoard, computerBoard;
 
 function gameLoop() {
 
     // Create gameboards
-    let playerBoard = new Gameboard;
-    let computerBoard = new Gameboard;
+    playerBoard = new Gameboard;
+    computerBoard = new Gameboard;
 
     createBoardInDOM(playerBoard, 'player-area')
     createBoardInDOM(computerBoard, 'computer-area')
 
-    deployListeners();
-
+    deployListeners()
 
     function createBoardInDOM(player, tag) {
         for(let i = 1; i <= player.board.length; i++ ){ 
@@ -28,5 +28,12 @@ function gameLoop() {
 
 }
 
+// Toggle isHorizontal value in ships arrray
+function toggleOrientation(shipName) {
+    const index = playerBoard.ships.findIndex(x => x.name === shipName);
+    playerBoard.ships[index].isHorizontal = !playerBoard.ships[index].isHorizontal;
+    console.log('ship isHorizontal: ', playerBoard.ships[index].isHorizontal)
+}
 
-export { gameLoop }
+
+export { gameLoop, toggleOrientation, }
