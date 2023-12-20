@@ -1,3 +1,4 @@
+import { playerBoard } from './GameLoop';
 import { Ship } from './Ship';
 
 class Gameboard {
@@ -5,7 +6,7 @@ class Gameboard {
         this.board = this.createBoard();
         this.numberOfShipsSunk = 0;
         this.ships = [
-            this.createShip("destroyer", 2),
+            this.createShip("patrolboat", 2),
             this.createShip("submarine", 3),
             this.createShip("cruiser", 3),
             this.createShip("battleship", 4),
@@ -34,6 +35,7 @@ class Gameboard {
     testAllSunk() {
         return this.numberOfShipsSunk === 5;
     }
+
 
 
 

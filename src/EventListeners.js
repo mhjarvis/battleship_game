@@ -1,4 +1,4 @@
-
+import { toggleOrientation } from "./GameLoop";
 
 function deployListeners() {
     const flip = document.querySelector('#flip');
@@ -8,6 +8,7 @@ function deployListeners() {
     flip.addEventListener('click', () => {
         for (let ship of ships) {
             changeHW(ship);
+            toggleOrientation(ship.id)
         }
     })
 
@@ -53,9 +54,10 @@ const changeHW = (ship) => {
     }
 }
 
-const dragStartHandler = (ev) => {
-    ev.dataTransfer.setData("text/plain", ev.target.id);
-    console.log(ev)
+const dragStartHandler = (e) => {
+    // set data for use during drop event
+    e.dataTransfer.setData("text/plain", e.target.id);
+    const ship = document.querySelector(`#${e.target.id}`);
 
 
 
