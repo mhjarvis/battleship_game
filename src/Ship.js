@@ -4,6 +4,7 @@ class Ship {
         this.length = length;
         this.numberOfHits = 0;
         this.isSunk = false;
+        this.isHorizontal = false;
     }
     hit() {
         this.numberOfHits += 1;
