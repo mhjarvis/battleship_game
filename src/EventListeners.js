@@ -27,6 +27,9 @@ function deployListeners() {
 
 
 
+/**
+ * THE FOLLOWING ARE FUNCTIONS FOR DRAG EVENTS ONLY 
+ */
 
 // Function that flips ship verticle / horizontally
 const changeHW = (ship) => {
@@ -59,8 +62,15 @@ const dragStartHandler = (e) => {
     // set data for use during drop event
     e.dataTransfer.setData("text/plain", e.target.id);
     e.dataTransfer.setData('text/plain', e.target.class);
+    e.dataTransfer.dropEffect = 'move';
     //console.log('got the data')
     //const ship = document.querySelector(`#${e.target.id}`);
 }
+
+/**
+ * THE FOLLOWING AFFECT THE DROP ZONE ELEMENTS
+ */
+
+
 
 export { deployListeners }
