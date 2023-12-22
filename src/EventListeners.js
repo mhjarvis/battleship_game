@@ -35,12 +35,20 @@ function deployListeners() {
 
         box.addEventListener('dragenter', (e) => {
             e.preventDefault();
-            console.log('drag over working')
+            //const box = document.querySelector(`${e.target.id}`);
+            let num = e.target.id;
+            console.log(num)
+            let box = document.getElementById(num)
+            console.log(box)
+            
+            box.style.backgroundColor = 'gray';
         })
 
-        box.addEventListener('dragleave', (e) => {
+        box.addEventListener('dragleave', (e) => {carrier
             e.preventDefault();
-            console.log('trains leaving')
+            let num = e.target.id;
+            let box = document.getElementById(num);
+            box.style.backgroundColor = 'white';
         })
     }
 
