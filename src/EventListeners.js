@@ -3,6 +3,8 @@ import { toggleOrientation } from "./GameLoop";
 function deployListeners() {
     const flip = document.querySelector('#flip');
     const ships = document.querySelectorAll('.ship-piece');
+    const playerBoxes = document.querySelectorAll('.pgrid')
+
 
     // EventListener for the flip button
     flip.addEventListener('click', () => {
@@ -20,8 +22,27 @@ function deployListeners() {
         })
     }
 
-    // 
+    // Add dragover and drophandler events
+    for (let box of playerBoxes) {
+        box.addEventListener('dragover', (e) => {
+            e.preventDefault();
+        })
+        box.addEventListener('drop', (e) => {
+            e.preventDefault();
+            const data = e.dataTransfer.getData('text/plain');
+            console.log(data)
+        })
 
+        box.addEventListener('dragenter', (e) => {
+            e.preventDefault();
+            console.log('drag over working')
+        })
+
+        box.addEventListener('dragleave', (e) => {
+            e.preventDefault();
+            console.log('trains leaving')
+        })
+    }
 
 }
 
@@ -62,7 +83,7 @@ const changeHW = (ship) => {
 const dragStartHandler = (e) => {
     // set data for use during drop event
     e.dataTransfer.setData("text/plain", e.target.id);
-    e.dataTransfer.setData('text/plain', e.target.class);
+    // e.dataTransfer.setData('text/plain', e.target.class);
     e.dataTransfer.dropEffect = 'move';
     //console.log('got the data')
     //const ship = document.querySelector(`#${e.target.id}`);
