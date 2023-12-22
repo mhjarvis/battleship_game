@@ -9,17 +9,17 @@ function gameLoop() {
     playerBoard = new Gameboard;
     computerBoard = new Gameboard;
 
-    createBoardInDOM(playerBoard, 'player-area')
-    createBoardInDOM(computerBoard, 'computer-area')
+    createBoardInDOM(playerBoard, 'player-area', '')
+    createBoardInDOM(computerBoard, 'computer-area', 'c')
 
     deployListeners()
 
-    function createBoardInDOM(player, tag) {
+    function createBoardInDOM(player, tag, prefix) {
         for(let i = 1; i <= player.board.length; i++ ){ 
             const DOMLocation = document.querySelector(`#${tag}`)
             const div = document.createElement('div');
             div.className = 'grid';
-            div.id = i;
+            div.id = prefix + i;
             div.innerText = i;
             DOMLocation.append(div)
         }
