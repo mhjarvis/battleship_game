@@ -20,6 +20,7 @@ function deployListeners() {
         })
     }
 
+    // 
 
 }
 
@@ -57,10 +58,9 @@ const changeHW = (ship) => {
 const dragStartHandler = (e) => {
     // set data for use during drop event
     e.dataTransfer.setData("text/plain", e.target.id);
-    const ship = document.querySelector(`#${e.target.id}`);
-
-
-
+    e.dataTransfer.setData('text/plain', e.target.class);
+    //console.log('got the data')
+    //const ship = document.querySelector(`#${e.target.id}`);
 }
 
 export { deployListeners }
