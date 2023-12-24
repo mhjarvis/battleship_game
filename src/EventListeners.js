@@ -54,9 +54,6 @@ function deployListeners() {
 
 }
 
-
-
-
 /**
  * THE FOLLOWING ARE FUNCTIONS FOR DRAG EVENTS ONLY 
  */
