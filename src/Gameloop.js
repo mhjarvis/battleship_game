@@ -35,9 +35,10 @@ function toggleOrientation(shipName) {
     console.log('ship isHorizontal: ', playerBoard.ships[index].isHorizontal)
 }
 
-getShipSize(boardName, shipName) {
+function getShipSize(boardName, shipName) {
     console.log('getShipSize')
 }
+
 
 
 export { gameLoop, toggleOrientation, getShipSize, }
