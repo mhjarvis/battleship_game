@@ -9,7 +9,7 @@ function deployListeners() {
     // EventListener for the flip button
     flip.addEventListener('click', () => {
         for (let ship of ships) {
-            changeHW(ship);
+            changeShipSizing(ship);
             toggleOrientation(ship.id)
         }
     })
@@ -58,8 +58,8 @@ function deployListeners() {
  * THE FOLLOWING ARE FUNCTIONS FOR DRAG EVENTS ONLY 
  */
 
-// Function that flips ship verticle / horizontally
-const changeHW = (ship) => {
+// Function to change ship sizing in CSS
+const changeShipSizing = (ship) => {
     let id = document.querySelector(`#${ship.id}`);
     const shipContainer = document.querySelector('.ship-container');
 
@@ -88,14 +88,11 @@ const changeHW = (ship) => {
 const dragStartHandler = (e) => {
     // set data for use during drop event
     e.dataTransfer.setData("text/plain", e.target.id);
-    // e.dataTransfer.setData('text/plain', e.target.class);
     e.dataTransfer.dropEffect = 'move';
-    //console.log('got the data')
-    //const ship = document.querySelector(`#${e.target.id}`);
 }
 
 /**
- * THE FOLLOWING AFFECT THE DROP ZONE ELEMENTS
+ * DROP ZONE
  */
 
 
