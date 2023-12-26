@@ -1,4 +1,7 @@
-import { toggleOrientation } from "./GameLoop";
+import { toggleOrientation, getShipSize } from "./GameLoop";
+
+let currentShipName = '';
+let currentShipLength
 
 function deployListeners() {
     const flip = document.querySelector('#flip');
@@ -62,8 +65,11 @@ const changeShipSizing = (ship) => {
 
 const dragStartHandler = (e) => {
     // set data for use during drop event
+    currentShipName = e.target.id;
     e.dataTransfer.setData("text/plain", e.target.id);
     e.dataTransfer.dropEffect = 'move';
+
+    console.log('var currentShip = ', e.target)
 }
 
 /**
@@ -84,19 +90,30 @@ const addDropHandlers = (box) => {
         e.preventDefault();
         //const box = document.querySelector(`${e.target.id}`);
         let num = e.target.id;
-        console.log(num)
-        let box = document.getElementById(num)
-        console.log(box)
-        
+        console.log(e.target)
+        let box = document.getElementById(num)        
         box.style.backgroundColor = 'gray';
     })
 
-    box.addEventListener('dragleave', (e) => {carrier
+    box.addEventListener('dragleave', (e) => {
         e.preventDefault();
         let num = e.target.id;
         let box = document.getElementById(num);
         box.style.backgroundColor = 'white';
     })
+}
+
+function updateCurrentShipLength () {
+    
+}
+
+function checkIfValidDrop(ship) {
+
+}
+
+function getAffectedGridBoxes(ship) {
+    let arr = [];
+
 }
 
 export { deployListeners }
