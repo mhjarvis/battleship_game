@@ -35,9 +35,13 @@ class Gameboard {
     testAllSunk() {
         return this.numberOfShipsSunk === 5;
     }
-
-
-
+    getShipOrientation(ship) {
+        console.log('nothing')
+    }
+    getShipSize(shipName) {
+        const found = this.ships.find((shipName) => shipName === this.ships.name)
+        console.log('fuck')
+    }
 
 }
 

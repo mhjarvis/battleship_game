@@ -1,4 +1,5 @@
 import { toggleOrientation } from "./GameLoop";
+import { playerBoard, computerBoard } from "./GameLoop";
 
 function deployListeners() {
     const flip = document.querySelector('#flip');
@@ -64,6 +65,7 @@ const dragStartHandler = (e) => {
     // set data for use during drop event
     e.dataTransfer.setData("text/plain", e.target.id);
     e.dataTransfer.dropEffect = 'move';
+    getShipSize(e)
 }
 
 /**
@@ -97,6 +99,11 @@ const addDropHandlers = (box) => {
         let box = document.getElementById(num);
         box.style.backgroundColor = 'white';
     })
+}
+
+const getShipSize = (ship) => {
+    console.log('getting ship size...')
+    playerBoard.getShipSize(ship)
 }
 
 export { deployListeners }
