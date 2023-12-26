@@ -1,5 +1,4 @@
 import { toggleOrientation } from "./GameLoop";
-import { playerBoard, computerBoard } from "./GameLoop";
 
 function deployListeners() {
     const flip = document.querySelector('#flip');

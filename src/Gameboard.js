@@ -1,4 +1,3 @@
-import { playerBoard } from './GameLoop';
 import { Ship } from './Ship';
 
 class Gameboard {

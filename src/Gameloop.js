@@ -36,4 +36,4 @@ function toggleOrientation(shipName) {
 }
 
 
-export { playerBoard, computerBoard, gameLoop, toggleOrientation, }
+export { gameLoop, toggleOrientation, }
