@@ -24,32 +24,7 @@ function deployListeners() {
 
     // Add dragover and drophandler events
     for (let box of playerBoxes) {
-        box.addEventListener('dragover', (e) => {
-            e.preventDefault();
-        })
-        box.addEventListener('drop', (e) => {
-            e.preventDefault();
-            const data = e.dataTransfer.getData('text/plain');
-            console.log(data)
-        })
-
-        box.addEventListener('dragenter', (e) => {
-            e.preventDefault();
-            //const box = document.querySelector(`${e.target.id}`);
-            let num = e.target.id;
-            console.log(num)
-            let box = document.getElementById(num)
-            console.log(box)
-            
-            box.style.backgroundColor = 'gray';
-        })
-
-        box.addEventListener('dragleave', (e) => {carrier
-            e.preventDefault();
-            let num = e.target.id;
-            let box = document.getElementById(num);
-            box.style.backgroundColor = 'white';
-        })
+        addDropHandlers(box);
     }
 
 }
@@ -95,6 +70,33 @@ const dragStartHandler = (e) => {
  * DROP ZONE
  */
 
+const addDropHandlers = (box) => {
+    box.addEventListener('dragover', (e) => {
+        e.preventDefault();
+    })
+    box.addEventListener('drop', (e) => {
+        e.preventDefault();
+        const data = e.dataTransfer.getData('text/plain');
+        console.log(data)
+    })
 
+    box.addEventListener('dragenter', (e) => {
+        e.preventDefault();
+        //const box = document.querySelector(`${e.target.id}`);
+        let num = e.target.id;
+        console.log(num)
+        let box = document.getElementById(num)
+        console.log(box)
+        
+        box.style.backgroundColor = 'gray';
+    })
+
+    box.addEventListener('dragleave', (e) => {carrier
+        e.preventDefault();
+        let num = e.target.id;
+        let box = document.getElementById(num);
+        box.style.backgroundColor = 'white';
+    })
+}
 
 export { deployListeners }
