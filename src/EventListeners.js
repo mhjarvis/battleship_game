@@ -66,12 +66,14 @@ const changeShipSizing = (ship) => {
 const dragStartHandler = (e) => {
     // set data for use during drop event
     currentShipName = e.target.id; 
-    currentShipLength = updateCurrentShipLength(e.target.id);
+    currentShipLength = updateCurrentShipLength(currentShipName);
 
     e.dataTransfer.setData("text/plain", e.target.id);
     e.dataTransfer.dropEffect = 'move';
 
-    console.log('var currentShip = ', e.target.id)
+    // WORKING - GET THE AFFECTED GRID BOXES
+    let arr = getAffectedGridBoxes(currentShipLength, e.target.id)
+    //console.log('Affected grid boxes array: ', arr)
 }
 
 /**
@@ -105,16 +107,17 @@ const addDropHandlers = (box) => {
 }
 
 function updateCurrentShipLength () {
-    currentShipLength = getPlayerShipSize(currentShipName);
+    return getPlayerShipSize(currentShipName);
 }
 
 function checkIfValidDrop(ship) {
 
 }
 
-function getAffectedGridBoxes(ship) {
+function getAffectedGridBoxes(shipLength, boxID) {
     let arr = [];
-
+    console.log(shipLength)
+    console.log(boxID)
 }
 
 export { deployListeners }
