@@ -39,7 +39,6 @@ class Gameboard {
     }
     getShipSize(shipName) {
         const found = this.ships.find((shipName) => shipName === this.ships.name)
-        console.log('fuck')
     }
 
 }
