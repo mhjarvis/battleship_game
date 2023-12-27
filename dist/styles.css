@@ -32,6 +32,13 @@ body {
     transform: rotate(-90deg);
 }
 
+.gray {
+    background-color: gray;
+}
+
+.white {
+    background-color: white;
+}
 /*************************************/ 
 /************ BOARD AREA *************/
 /*************************************/ 
