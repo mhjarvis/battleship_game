@@ -3,6 +3,7 @@ import { toggleOrientation, getPlayerShipSize } from "./GameLoop";
 let currentShipName = '';
 let currentShipLength;
 let isHorizontal = false;
+let currentGridSquares = [];
 
 function deployListeners() {
     const flip = document.querySelector('#flip');
@@ -86,7 +87,8 @@ const addDropHandlers = (box) => {
     box.addEventListener('dragenter', (e) => {
         e.preventDefault();
         document.getElementById(e.target.id).style.backgroundColor = 'gray'     // highlight on hover
-        console.log('getAffectedGridBoxes returns: ' + getAffectedGridBoxes(e.target.id))
+        updateCurrentGridBoxes(e.target.id)
+        updateGridBoxColor()
     })
     // DRAG OVER
     box.addEventListener('dragover', (e) => {
@@ -116,22 +118,22 @@ function checkIfValidDrop(ship) {
 
 }
 
-function getAffectedGridBoxes(boxID) {
+// Creates an array of values of where the current dragged ship is located
+function updateCurrentGridBoxes(boxID) {
     let num = parseInt(boxID)
-    let arr = [num]
+    currentGridSquares = [num]
 
     if (isHorizontal === false) {
         for (let i = 1; i < currentShipLength; i++) {
             num = num + 10
-            arr.push(num)
+            currentGridSquares.push(num)
         }
     } else {
         for (let i = 1; i < currentShipLength; i++) {
             num -= 1
-            arr.push(num)
+            currentGridSquares.push(num)
         }
     }
-    return arr
 }
 
 export { deployListeners }
