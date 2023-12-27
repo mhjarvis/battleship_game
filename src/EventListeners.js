@@ -112,9 +112,7 @@ const addDropHandlers = (box) => {
     })
 }
 
-/* function updateCurrentShipLength () {
-    return getPlayerShipSize(currentShipName);
-} */
+
 
 function checkIfValidDrop(ship) {
 
