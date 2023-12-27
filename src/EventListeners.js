@@ -81,6 +81,30 @@ const dragStartHandler = (e) => {
  * DROP ZONE
  */
 
+const addDropHandlers = (box) => {
+    // DRAG ENTER
+    box.addEventListener('dragenter', (e) => {
+        e.preventDefault();
+        document.getElementById(e.target.id).style.backgroundColor = 'gray'     // highlight on hover
+        console.log('getAffectedGridBoxes returns: ' + getAffectedGridBoxes(e.target.id))
+    })
+    // DRAG OVER
+    box.addEventListener('dragover', (e) => {
+        e.preventDefault();
+    })
+    // DRAG LEAVE
+    box.addEventListener('dragleave', (e) => {
+        e.preventDefault();
+        document.getElementById(e.target.id).style.backgroundColor = 'white';
+    })
+    // ON DROP
+    box.addEventListener('drop', (e) => {
+        e.preventDefault();
+        const data = e.dataTransfer.getData('text/plain');
+        console.log(data)
+    })
+}
+
 function getShipLength(name) {
     if (name === 'carrier') return 5
     if (name === 'battleship') return 4
@@ -88,42 +112,26 @@ function getShipLength(name) {
     if (name === 'patrolboat') return 2
 }
 
-const addDropHandlers = (box) => {
-    box.addEventListener('dragover', (e) => {
-        e.preventDefault();
-    })
-    box.addEventListener('drop', (e) => {
-        e.preventDefault();
-        const data = e.dataTransfer.getData('text/plain');
-        console.log(data)
-    })
-
-    box.addEventListener('dragenter', (e) => {
-        e.preventDefault();
-        //const box = document.querySelector(`${e.target.id}`);
-        let num = e.target.id;
-        let box = document.getElementById(num)        
-        box.style.backgroundColor = 'gray';
-    })
-
-    box.addEventListener('dragleave', (e) => {
-        e.preventDefault();
-        let num = e.target.id;
-        let box = document.getElementById(num);
-        box.style.backgroundColor = 'white';
-    })
-}
-
-
-
 function checkIfValidDrop(ship) {
 
 }
 
 function getAffectedGridBoxes(boxID) {
+    let num = parseInt(boxID)
+    let arr = [num]
 
-    let arr = [];
-
+    if (isHorizontal === false) {
+        for (let i = 1; i < currentShipLength; i++) {
+            num = num + 10
+            arr.push(num)
+        }
+    } else {
+        for (let i = 1; i < currentShipLength; i++) {
+            num -= 1
+            arr.push(num)
+        }
+    }
+    return arr
 }
 
 export { deployListeners }
