@@ -75,7 +75,7 @@ const dragStartHandler = (e) => {
     e.dataTransfer.dropEffect = 'move';
 
     // WORKING - GET THE AFFECTED GRID BOXES
-    let arr = getAffectedGridBoxes(currentShipLength, e.target.id)
+    //let arr = getAffectedGridBoxes(currentShipLength, e.target.id)
 }
 
 /**
@@ -86,9 +86,10 @@ const addDropHandlers = (box) => {
     // DRAG ENTER
     box.addEventListener('dragenter', (e) => {
         e.preventDefault();
-        document.getElementById(e.target.id).style.backgroundColor = 'gray'     // highlight on hover
+        //document.getElementById(e.target.id).style.backgroundColor = 'gray'     // highlight on hover
         updateCurrentGridBoxes(e.target.id)
         updateGridBoxColor()
+        console.log('done')
     })
     // DRAG OVER
     box.addEventListener('dragover', (e) => {
@@ -126,14 +127,27 @@ function updateCurrentGridBoxes(boxID) {
     if (isHorizontal === false) {
         for (let i = 1; i < currentShipLength; i++) {
             num = num + 10
-            currentGridSquares.push(num)
+            if (num > 0 && num < 101) {
+                currentGridSquares.push(num)
+            }
         }
     } else {
         for (let i = 1; i < currentShipLength; i++) {
             num -= 1
-            currentGridSquares.push(num)
+            if (num > 0 && num < 101) {
+                currentGridSquares.push(num)
+            }
         }
     }
 }
+
+function updateGridBoxColor() {
+    console.log('is it here?')
+    for (let i = 0; i < currentGridSquares.length; i++) {
+        console.log("updating grid", currentGridSquares[i])
+        document.getElementById(currentGridSquares[i]).style.backgroundColor = 'gray'
+    }
+}
+
 
 export { deployListeners }
