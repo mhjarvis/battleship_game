@@ -2,6 +2,7 @@ import { toggleOrientation, getPlayerShipSize } from "./GameLoop";
 
 let currentShipName = '';
 let currentShipLength;
+let isHorizontal = false;
 
 function deployListeners() {
     const flip = document.querySelector('#flip');
@@ -14,6 +15,7 @@ function deployListeners() {
         for (let ship of ships) {
             changeShipSizing(ship);
             toggleOrientation(ship.id)
+            isHorizontal = !isHorizontal;
         }
     })
 
@@ -118,7 +120,8 @@ function checkIfValidDrop(ship) {
 
 }
 
-function getAffectedGridBoxes(shipLength, boxID) {
+function getAffectedGridBoxes(boxID) {
+
     let arr = [];
 
 }
