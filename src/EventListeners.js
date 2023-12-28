@@ -1,4 +1,4 @@
-import { toggleOrientation, getPlayerShipSize } from "./GameLoop";
+import { toggleOrientation, addPlayerShipLocation } from "./GameLoop";
 
 let currentShipName = '';           // hold ship idea (for drag actions)
 let currentShipLength;              // hold ship length info (for drag calculations)
@@ -93,6 +93,13 @@ const addDropHandlers = (box) => {
     box.addEventListener('drop', (e) => {
         e.preventDefault();
         checkIfValidDrop()
+        if (checkIfValidDrop()) {
+            for (let el of currentGridSquares) {
+                addPlayerShipLocation(currentShipName, el)
+            }
+        }
+        
+        
         const data = e.dataTransfer.getData('text/plain');      // NEEDS REVISION ***
     })
 }

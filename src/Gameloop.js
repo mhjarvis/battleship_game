@@ -35,7 +35,13 @@ function toggleOrientation(shipName) {
     console.log('ship isHorizontal: ', playerBoard.ships[index].isHorizontal)
 }
 
+function addPlayerShipLocation (shipName, shipID) {
+    // console.log('shipName: ' + shipName + 'shipID' + shipID)
+    playerBoard.placeShip(shipName, shipID)
+    console.log(playerBoard.board)
+}
 
 
 
-export { gameLoop, toggleOrientation }
+
+export { gameLoop, toggleOrientation, addPlayerShipLocation }
