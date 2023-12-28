@@ -6,9 +6,9 @@ let isHorizontal = false;           // for drag calculations
 let currentGridSquares = [];        // grid squares current ship is over (where it will drop)
 
 function deployListeners() {
-    const flip = document.querySelector('#flip');
-    const ships = document.querySelectorAll('.ship-piece');
-    const playerBoxes = document.querySelectorAll('.pgrid')
+    const flip = document.querySelector('#flip');           // flip button
+    const ships = document.querySelectorAll('.ship-piece'); // html items
+    const playerBoxes = document.querySelectorAll('.pgrid') // player board
 
 
     // EventListener for the flip button
