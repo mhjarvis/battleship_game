@@ -92,7 +92,8 @@ const addDropHandlers = (box) => {
     // ON DROP
     box.addEventListener('drop', (e) => {
         e.preventDefault();
-        const data = e.dataTransfer.getData('text/plain');
+        checkIfValidDrop()
+        const data = e.dataTransfer.getData('text/plain');      // NEEDS REVISION ***
     })
 }
 
@@ -109,7 +110,10 @@ function getShipLength(name) {
 }
 
 function checkIfValidDrop(ship) {
-
+    if (currentShipLength === currentGridSquares.length) {
+        return true
+    }
+    return false;
 }
 
 /**
