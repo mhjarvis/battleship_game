@@ -136,11 +136,12 @@ function updateCurrentGridBoxes(boxID) {
     } else {
         for (let i = 1; i < currentShipLength; i++) {
             num -= 1
+            if (num % 10 === 0) break
             if (num > 0 && num < 101) {
                 currentGridSquares.push(num)
             }
         }
-    }
+    } console.log(currentGridSquares)
 }
 
 /**
