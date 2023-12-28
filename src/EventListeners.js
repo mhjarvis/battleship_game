@@ -11,26 +11,30 @@ function deployListeners() {
     const playerBoxes = document.querySelectorAll('.pgrid') // player board
 
     // EventListener for the flip button
-    flip.addEventListener('click', () => {
+/*     flip.addEventListener('click', () => {
         for (let ship of ships) {
+            if (ship == null) {
+                break;
+            }
             changeShipSizing(ship);
             toggleOrientation(ship.id)
             isHorizontal = !isHorizontal;
         }
-    })
+    }) */
 
     // Add dragstart/dragend listeners to each ship element
-    for (let ship of ships) {
+/*     for (let ship of ships) {
         window.addEventListener('DOMContentLoaded', () => {
             const element = document.getElementById(ship.id);
             element.addEventListener('dragstart', dragStartHandler);
         })
-    }
+    } */
 
     // Add dragover and drophandler events
-    for (let box of playerBoxes) {
+/*     for (let box of playerBoxes) {
         addDropHandlers(box);
     }
+*/
 }
 
 /**
@@ -38,7 +42,7 @@ function deployListeners() {
  */
 
 // Change ship sizing in html (for visual reasons only)
-const changeShipSizing = (ship) => {
+/* const changeShipSizing = (ship) => {
     let id = document.querySelector(`#${ship.id}`);
     const shipContainer = document.querySelector('.ship-container');
 
@@ -63,17 +67,17 @@ const changeShipSizing = (ship) => {
         shipContainer.style.flexDirection = 'column';
     }
 }
-
-const dragStartHandler = (e) => {
+ */
+/* const dragStartHandler = (e) => {
     currentShipName = e.target.id; 
     currentShipLength = getShipLength(currentShipName);     // lookup function
 
     // Needs Revisions ******
     e.dataTransfer.setData("text/plain", e.target.id);
     e.dataTransfer.dropEffect = 'move';
-}
+} */
 
-const addDropHandlers = (box) => {
+/* const addDropHandlers = (box) => {
     // DRAG ENTER
     box.addEventListener('dragenter', (e) => {
         e.preventDefault();
@@ -97,12 +101,10 @@ const addDropHandlers = (box) => {
             for (let el of currentGridSquares) {
                 addPlayerShipLocation(currentShipName, el)
             }
+            const data = e.dataTransfer.getData('text/plain');
         }
-        
-        
-        const data = e.dataTransfer.getData('text/plain');      // NEEDS REVISION ***
     })
-}
+} */
 
 /**
  * This function serves more as a lookup function; it is created here as to
@@ -129,7 +131,7 @@ function checkIfValidDrop(ship) {
  * orientation (see global variables above). It is used when a draged element
  * enters a valid grid box. 
  */
-function updateCurrentGridBoxes(boxID) {
+/* function updateCurrentGridBoxes(boxID) {
     let num = parseInt(boxID)
     currentGridSquares = [num]
 
@@ -149,14 +151,14 @@ function updateCurrentGridBoxes(boxID) {
             }
         }
     } console.log(currentGridSquares)
-}
+} */
 
 /**
  * These functions will add and remove the gray background-color from
  * the individual grid squares (based on their ID). This is to mimic the
  * hovering effect. It is used during the drag enter effect. 
  */
-function addGridBoxColor() {
+/* function addGridBoxColor() {
     for (let i = 0; i < currentGridSquares.length; i++) {
         document.getElementById(currentGridSquares[i]).classList.add('gray');
     }
@@ -165,6 +167,5 @@ function removeGridBoxColor() {
     for (let i = 0; i < currentGridSquares.length; i++) {
         document.getElementById(currentGridSquares[i]).classList.remove('gray');
     }
-}
+} */
 
-export { deployListeners }
