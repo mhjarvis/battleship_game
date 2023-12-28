@@ -13,8 +13,8 @@
 }
 
 * {
-/*  outline: 1px solid red;  
- */}
+    outline: 1px solid red;  
+}
 
 body {
     height: 100vh;
@@ -24,21 +24,6 @@ body {
     overflow-x: hidden;
 }
 
-.rotate-right {
-    transform: rotate(90deg);
-}
-
-.rotate-left {
-    transform: rotate(-90deg);
-}
-
-.gray {
-    background-color: gray;
-}
-
-.white {
-    background-color: white;
-}
 /*************************************/ 
 /************ BOARD AREA *************/
 /*************************************/ 
@@ -51,12 +36,14 @@ h1 {
 
 .main {
     display: flex;
+    align-items: center;
     width: 100%;
+    height: 400px;
     justify-content: space-evenly;
 }
 .player-area, .computer-area {
     width: 320px;
-    height: 300px;
+    height: 320px;
     display: flex;
     flex-wrap: wrap;
 }
@@ -70,53 +57,4 @@ h1 {
     justify-content: center;
 }
 
-/*************************************/ 
-/********** SHIP CONTAINER ***********/
-/*************************************/ 
 
-#flip {
-    margin-top: 100px;
-}
-
-.ship-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid black;
-    margin: 10px;
-}
-
-.ship-piece {
-    border: 1px solid black;
-    margin: 10px;
-}
-
-#carrier {
-    background-color: blue;
-    width: 30px;
-    height: 158px;
-}
-
-#battleship {
-    background-color: red;
-    width: 30px;
-    height: 126px;
-}
-
-#cruiser {
-    background-color: orange;
-    width: 30px;
-    height: 94px;
-}
-
-#submarine {
-    background-color: green;
-    width: 30px;
-    height: 94px;
-}
-
-#patrolboat {
-    background-color: yellow;
-    width: 30px;
-    height: 62px;
-}
