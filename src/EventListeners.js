@@ -10,7 +10,6 @@ function deployListeners() {
     const ships = document.querySelectorAll('.ship-piece'); // html items
     const playerBoxes = document.querySelectorAll('.pgrid') // player board
 
-
     // EventListener for the flip button
     flip.addEventListener('click', () => {
         for (let ship of ships) {
@@ -35,10 +34,10 @@ function deployListeners() {
 }
 
 /**
- * THE FOLLOWING ARE FUNCTIONS FOR DRAG EVENTS ONLY 
+ * DRAG EVENT FUNCTIONS
  */
 
-// Function to change ship sizing in CSS
+// Change ship sizing in html (for visual reasons only)
 const changeShipSizing = (ship) => {
     let id = document.querySelector(`#${ship.id}`);
     const shipContainer = document.querySelector('.ship-container');
@@ -66,24 +65,18 @@ const changeShipSizing = (ship) => {
 }
 
 const dragStartHandler = (e) => {
-    // set data for use during drop event
     currentShipName = e.target.id; 
-    currentShipLength = getShipLength(currentShipName);
-    console.log('Current ship length is ', currentShipLength)
+    currentShipLength = getShipLength(currentShipName);     // lookup function
 
+    // Needs Revisions ******
     e.dataTransfer.setData("text/plain", e.target.id);
     e.dataTransfer.dropEffect = 'move';
-
-    // WORKING - GET THE AFFECTED GRID BOXES
-    //let arr = getAffectedGridBoxes(currentShipLength, e.target.id)
 }
-
 
 const addDropHandlers = (box) => {
     // DRAG ENTER
     box.addEventListener('dragenter', (e) => {
         e.preventDefault();
-
         removeGridBoxColor();                   // make current grid squares white
         updateCurrentGridBoxes(e.target.id)     // udpate current grid squares vals
         addGridBoxColor()                       // add current highlight color
