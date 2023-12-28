@@ -111,7 +111,7 @@ function deployListeners() {
  * avoid calling the actual object and getting the ship length based on the
  * DOMs ID value (of the draged object).
  */
-function getShipLength(name) {
+/* function getShipLength(name) {
     if (name === 'carrier') return 5
     if (name === 'battleship') return 4
     if (name === 'cruiser' || name === 'submarine') return 3
@@ -123,7 +123,7 @@ function checkIfValidDrop(ship) {
         return true
     }
     return false;
-}
+} */
 
 /**
  * This function is used to update the currently 'hovered' over grid boxes,
