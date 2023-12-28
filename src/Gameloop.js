@@ -37,6 +37,37 @@ function createBoardInDOM(player, tag, classPrefix, idPrefix) {
     }
 }
 
+function placePlayerShips() {
+    for (let i = 0; i < playerBoard.ships.length; i++) {
+        let random = getRandomGrid()
+        let ship = playerBoard.ships[i]
+        let isHorizontal = randomBool()
+
+        // test if random is legal move
+        // update playerBoard
+        // refresh gameboard display
+    }
+}
+
+function checkLegalPlacement(index, length, isHorizontal) {
+
+}
+
+/**
+ * This function returns a random number between 0 and 99.
+ */
+function getRandomGrid() {
+    return Math.floor(Math.random() * 100)
+}
+
+function randomBool() {
+    return Math.random() >= 0.5
+}
+
+/**
+ * This function will reset the gameboard for a new game. IN PROGRESS...
+ */
+
 function reset() {
     playerBoard = new Gameboard
     computerBoard = new Gameboard
@@ -44,19 +75,4 @@ function reset() {
     createBoardInDOM(computerBoard, 'computer-area', 'c', 'c')
     initiateListeners()
 }
-
-function placePlayerShips() {
-    for (let i = 0; i < playerBoard.ships.length; i++) {
-        let random = getRandomGrid()
-        console.log(getRandomGrid())
-    }
-}
-
-function getRandomGrid() {
-    return Math.floor(Math.random() * 100)
-}
-/**
- * This function will 
- */
-
 export { gameLoop, placePlayerShips }
