@@ -1,10 +1,9 @@
 import { toggleOrientation, getPlayerShipSize } from "./GameLoop";
 
-let currentShipName = '';
-let currentShipLength;
-let isHorizontal = false;
-let currentGridSquares = [];
-let oldGridSquares = []
+let currentShipName = '';           // hold ship idea (for drag actions)
+let currentShipLength;              // hold ship length info (for drag calculations)
+let isHorizontal = false;           // for drag calculations
+let currentGridSquares = [];        // grid squares current ship is over (where it will drop)
 
 function deployListeners() {
     const flip = document.querySelector('#flip');
