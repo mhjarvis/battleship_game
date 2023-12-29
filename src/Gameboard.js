@@ -26,7 +26,7 @@ class Gameboard {
         return new Ship(name, length);
     }
     placeShip(ship, index) {
-        this.board[index - 1] = ship;
+        
         // TODO - place ships at specific coordinates, update as needed
     }
     receiveAttack(coordinate) {
