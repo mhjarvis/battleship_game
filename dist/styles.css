@@ -12,9 +12,9 @@
     --white: #000000;       
 }
 
-* {
+/* * {
     outline: 1px solid red;  
-}
+} */
 
 body {
     height: 100vh;
@@ -46,12 +46,13 @@ h1 {
     height: 320px;
     display: flex;
     flex-wrap: wrap;
+    border: 2px solid black
 }
 
 .pgrid, .cgrid {
     width: 30px;
     height: 30px;
-    border: 1px solid black;
+    border: 1px dashed black;
     display: flex;
     align-items: center;
     justify-content: center;

@@ -10,7 +10,7 @@ function gameLoop() {
     playerBoard = new Gameboard
     computerBoard = new Gameboard
 
-    placePlayerShips()
+    placePlayerShips()  // initial; randomized with button
 
     //createBoardInDOM('playerBoard', 'player-area', 'p', '')
     //createBoardInDOM('computerBoard', 'computer-area', 'c', 'c')
@@ -29,13 +29,12 @@ function gameLoop() {
  * everything to either the player container, or the computer container.
  */
 
-function createBoardInDOM(player, tag, classPrefix, idPrefix) {
+function createBoardInDOM(tag, classPrefix, idPrefix) {
     for(let i = 1; i <= 100; i++ ){ 
         const DOMLocation = document.querySelector(`#${tag}`)   // get container element
         const div = document.createElement('div')
         div.className = classPrefix + 'grid'
         div.id = idPrefix + i
-        div.innerText = i
         DOMLocation.append(div)
 
         if (playerBoard.board[i - 1] !== undefined) {
@@ -57,7 +56,7 @@ function placePlayerShips() {
 
     playerBoard.board = []
 
-    createBoardInDOM('player', 'player-area', 'p', '')
+    createBoardInDOM('player-area', 'p', '')
     //playerBoard.createBoard()
 /*     for (let i = 0; i < 100; i++) {
         playerBoard.board[i] = undefined
