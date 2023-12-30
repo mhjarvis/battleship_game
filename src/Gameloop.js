@@ -32,17 +32,24 @@ function gameLoop() {
 function createBoardInDOM(tag, classPrefix, idPrefix) {
     for(let i = 1; i <= 100; i++ ){ 
         const DOMLocation = document.querySelector(`#${tag}`)   // get container element
-        const div = document.createElement('div')
-        div.className = classPrefix + 'grid'
-        div.id = idPrefix + i
-        DOMLocation.append(div)
+        const div = document.createElement('div')               // create new div
+        div.className = classPrefix + 'grid'                    // add class
+        div.id = idPrefix + i                                   // add ID
+        DOMLocation.append(div)                                 // append
 
+        /**
+         * Because this version auto-places the player's ships and allows them to randomize it,
+         * we are adding the ship's name to the class list and styling using that approach.
+         */
         if (playerBoard.board[i - 1] !== undefined) {
             document.getElementById(idPrefix + i).classList.add(playerBoard.board[i - 1])
         } 
     }
 }
 
+/**
+ * Remove all child elements of the parent element in the DOM
+ */
 function resetDOMBoard(parent) {
     while (parent.firstChild) {
         parent.firstChild.className = '';
@@ -57,10 +64,7 @@ function placePlayerShips() {
     playerBoard.board = []
 
     createBoardInDOM('player-area', 'p', '')
-    //playerBoard.createBoard()
-/*     for (let i = 0; i < 100; i++) {
-        playerBoard.board[i] = undefined
-    } */
+
 
     for (let i = 0; i < 5; i++) {
         let ship = playerBoard.ships[i]
@@ -122,9 +126,7 @@ function placePlayerShips() {
 }
 
 /**
- * 
- * This function gets a valid list of sequental index numbers for placing the ship
- * passed to it. 
+ * These functions get a valid list of sequental index numbers for placing the ship passed to it. 
  */
 
 function getVerticleArray(length) {
