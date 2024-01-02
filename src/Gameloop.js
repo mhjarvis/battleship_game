@@ -235,29 +235,6 @@ function randomBool() {
 }
 
 
-
-    /* 
-
-
-
-    } else {
-        for (let i = 1; i < currentShipLength; i++) {
-            num -= 1
-            if (num % 10 === 0) break
-            if (num > 0 && num < 101) {
-                currentGridSquares.push(num)
-            }
-        }
-    } console.log(currentGridSquares)
-} */
-
-
-function checkLegalPlacement(index, length, isHorizontal) {
-
-}
-
-
-
 /**
  * This function will reset the gameboard for a new game. IN PROGRESS...
  */
@@ -265,8 +242,8 @@ function checkLegalPlacement(index, length, isHorizontal) {
 function reset() {
     playerBoard = new Gameboard
     computerBoard = new Gameboard
-    createBoardInDOM(playerBoard, 'player-area', 'p', '')
-    createBoardInDOM(computerBoard, 'computer-area', 'c', 'c')
-    initiateListeners()
+    placePlayerShips()
+    placeComputerShips()
 }
-export { game, placePlayerShips }
+
+export { game, placePlayerShips, reset }

@@ -1,4 +1,4 @@
-import { placePlayerShips } from "./Gameloop";
+import { placePlayerShips, reset } from "./Gameloop";
 
 function initiateListeners() {
 
@@ -20,6 +20,8 @@ function initiateListeners() {
         randomizeButton.classList.toggle('hidden')
         startButton.classList.toggle('hidden')
         resetButton.classList.toggle('hidden')
+
+        reset()
     })
 
 
