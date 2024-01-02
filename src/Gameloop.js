@@ -13,7 +13,6 @@ function game() {
     placePlayerShips()
     placeComputerShips()
 
-    // Add listeners as needed
     initiateListeners()
 
 

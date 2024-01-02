@@ -14,6 +14,8 @@ function initiateListeners() {
         randomizeButton.classList.toggle('hidden')
         startButton.classList.toggle('hidden')
         resetButton.classList.toggle('hidden')
+
+        secondaryListeners()
     })
 
     resetButton.addEventListener('click', () => {
@@ -23,10 +25,23 @@ function initiateListeners() {
 
         reset()
     })
+}
 
+function secondaryListeners() {
+    const allPlayerSquares = document.querySelectorAll('.pgrid')
+    const allComputerSquares = document.querySelectorAll('.cgrid')
 
+    for (let square of allPlayerSquares) {
+        square.addEventListener('click', () => {
+            
+        })
+    }
 
+    for (let square of allComputerSquares) {
+        square.addEventListener('click', () => {
 
+        })
+    }
 }
 
 
