@@ -33,7 +33,7 @@ function secondaryListeners() {
 
     for (let square of allPlayerSquares) {
         square.addEventListener('click', () => {
-            
+            console.log('working')
         })
     }
 

@@ -28,6 +28,14 @@ body {
     display: none;
 }
 
+.hit {
+    background-color: red;
+}
+
+.miss {
+    background-color: blue;
+}
+
 /*************************************/ 
 /************ BOARD AREA *************/
 /*************************************/ 
@@ -60,6 +68,11 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.output {
+    font-size: 3em;
+    margin: 25px 0;
 }
 
 /**
@@ -95,7 +108,16 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    width: 300px;
+    width: 500px;
     height: 100px;
 }
 
+button {
+    font-size: 2rem;
+    width: 150px;
+    height: 50px;
+}
+
+button:hover {
+    background-color: white;
+}
