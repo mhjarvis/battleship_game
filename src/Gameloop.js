@@ -11,6 +11,7 @@ function game() {
     computerBoard = new Gameboard
 
     placePlayerShips()  // initial; randomized with button
+    placeComputerShips()
 
     //createBoardInDOM('playerBoard', 'player-area', 'p', '')
     //createBoardInDOM('computerBoard', 'computer-area', 'c', 'c')
@@ -22,6 +23,19 @@ function game() {
 
 }
 
+function createCPUInDOM(tag, classPrefix, idPrefix) {
+    for (let i = 1; i <= 100; i++) {
+        const location = document.querySelector(`#${tag}`)
+        const div = document.createElement('div')
+        div.className = classPrefix + 'grid'
+        div.id = idPrefix + i
+        location.append(div)
+
+        if (computerBoard.board[i - 1] !== undefined) {
+            document.getElementById(idPrefix + i).classList.add(computerBoard.board[i - 1])
+        }
+    }
+}
 /**
  * 
  * This function creates and adds a gameboard to the DOM. It first retrieves the preset
@@ -44,6 +58,66 @@ function createBoardInDOM(tag, classPrefix, idPrefix) {
         if (playerBoard.board[i - 1] !== undefined) {
             document.getElementById(idPrefix + i).classList.add(playerBoard.board[i - 1])
         } 
+    }
+}
+
+function placeComputerShips() {
+    const container = document.getElementById('computer-area')
+    resetDOMBoard(container)
+    computerBoard.board = []
+    createCPUInDOM('computer-area', 'c', 'c')
+
+    for (let i = 0; i < 5; i++) {
+        let ship = computerBoard.ships[i]
+        let horizontal = randomBool()
+        let isValid = false
+        let thisShipsLocation = []
+
+        while (isValid === false) {
+            if (horizontal === true) {
+                let arr = getVerticleArray(ship.length)
+                let test = true
+        
+                for (let a of arr) {
+                    if (a <= 0) {
+                        test = false
+                    } else if (computerBoard.board[a] !== undefined) {
+                        console.log('cpu space taken')
+                        test = false
+                    }
+                }
+                if (test === true) {
+                    isValid = true;
+                    thisShipsLocation = arr
+                }
+            } else {
+                let arr = getHorizontalArray(ship.length)
+                let test = true
+
+                for (let a of arr) {
+                    if (a < 0) {
+                        test = false
+                    } else if (a % 10 === 0 && a != arr[0]) {
+                        test = false
+                    } else if (computerBoard.board[a] !== undefined) {
+                        test = false
+                    }
+                }
+                if (test === true) {
+                    isValid = true;
+                    thisShipsLocation = arr
+                }
+            }
+        }
+        // update playerBoard
+        for (let x of thisShipsLocation) {
+            computerBoard.board[x] = ship.name
+        }
+    }
+    for (let i = 0; i < 100; i++) {
+        if (computerBoard.board[i] !== undefined) {
+            document.getElementById('c' + i).classList.add(computerBoard.board[i])
+        }
     }
 }
 
@@ -71,6 +145,7 @@ function placePlayerShips() {
         let horizontal = randomBool()
         let isValid = false
         let thisShipsLocation = []
+
 
         while (isValid === false) {
             if (horizontal === true) {
