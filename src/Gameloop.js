@@ -6,15 +6,12 @@ let playerBoard, computerBoard;
 
 function game() {
 
-    // Create gameboards
+    // Create gameboards and place initial ships
     playerBoard = new Gameboard
     computerBoard = new Gameboard
 
-    placePlayerShips()  // initial; randomized with button
+    placePlayerShips()
     placeComputerShips()
-
-    //createBoardInDOM('playerBoard', 'player-area', 'p', '')
-    //createBoardInDOM('computerBoard', 'computer-area', 'c', 'c')
 
     // Add listeners as needed
     initiateListeners()
