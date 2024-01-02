@@ -4,7 +4,7 @@ import { initiateListeners } from "./Listeners";
 
 let playerBoard, computerBoard;
 
-function gameLoop() {
+function game() {
 
     // Create gameboards
     playerBoard = new Gameboard
@@ -197,4 +197,4 @@ function reset() {
     createBoardInDOM(computerBoard, 'computer-area', 'c', 'c')
     initiateListeners()
 }
-export { gameLoop, placePlayerShips }
+export { game, placePlayerShips }

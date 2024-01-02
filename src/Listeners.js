@@ -1,4 +1,4 @@
-import { placePlayerShips } from "./GameLoop";
+import { placePlayerShips } from "./Gameloop";
 
 function initiateListeners() {
 
