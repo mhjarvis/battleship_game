@@ -50,4 +50,4 @@ function shoot(event) {
     grid.removeEventListener('click', shoot)                    // removes this listener for subsequent clicks
 }                                                               // will do nothing
 
-export { initiateListeners }
+export { initiateListeners, shoot }

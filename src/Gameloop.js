@@ -1,14 +1,9 @@
 import { Gameboard } from "./Gameboard";
-import { initiateListeners } from "./Listeners";
+import { initiateListeners, shoot } from "./Listeners";
 
-let playerBoard, computerBoard;         // Gameboard objects
-let isWinner = false                    // For game() loop exit
+let playerBoard, computerBoard;             // Gameboard objects
 
-/**
- * This function is for the intial setup and will place player and computer ships. 
- */
-
-function setup() {
+function setup() {                          // initial setup
     playerBoard = new Gameboard
     computerBoard = new Gameboard
 
@@ -17,79 +12,36 @@ function setup() {
     initiateListeners()                     // initial listeners for buttons
 }
 
-/**
- * This function will initiate upon the 'Start Game' button being clicked. 
- */
-
-function game() {
+function game() {                           // only updates initial player notificiation of their turn
     const sendOutput = document.getElementById('output')
     sendOutput.innerText = 'Your shot!'
 }
 
-function takeShot(id) {
-    let target = id.slice(1)
-
-
-    computerBoard.receiveAttack(target, id)
-    checkForWin()
-/*     if (computerBoard.board[target] === undefined) {
-        console.log('miss')
-    } else if (computerBoard.board[target] === 'miss') {
-        console.log('already fired here')
-    } else if (computerBoard.board[target] === 'hit') {
-        console.log('already fired here')
-    } else {
-        console.log('HIIIIIITTTTTTT!!!!!!')
-    } */
+function resolvePlayerShot(id) {
+    let index = id.slice(1)                     // get index for the computerBoard.board object
+    computerBoard.receiveAttack(index, id)      // update computerBoard.board & DOM coloring
+    checkForWin()                               
 }
 
 function checkForWin() {
-    console.log(computerBoard.numberOfShipsSunk)
+    const output = document.getElementById('output')
+    console.log('Num of CPU ships sunk: ', computerBoard.numberOfShipsSunk)
     if (playerBoard.testAllSunk() === true) {
-        console.log('Computer Wins')
+        output.innerText = 'The Computer beat you this time!'
+        removeAllCPUListeners()
     }
     if (computerBoard.testAllSunk() === true) {
-        console.log('Player Wins')
+        output.innerText = 'You won this round!'
+        removeAllCPUListeners()
     }
 }
 
-function createCPUInDOM(tag, classPrefix, idPrefix) {
-    for (let i = 1; i <= 100; i++) {
-        const location = document.querySelector(`#${tag}`)
-        const div = document.createElement('div')
-        div.className = classPrefix + 'grid'
-        div.id = idPrefix + i
-        location.append(div)
-
-        if (computerBoard.board[i - 1] !== undefined) {
-            document.getElementById(idPrefix + i).classList.add(computerBoard.board[i - 1])
-        }
-    }
-}
 /**
  * 
  * This function creates and adds a gameboard to the DOM. It first retrieves the preset
  * container element. Then creates a new div, adds a class name and id, then appends
  * everything to either the player container, or the computer container.
  */
-
-function createBoardInDOM(tag, classPrefix, idPrefix) {
-    for(let i = 1; i <= 100; i++ ){ 
-        const DOMLocation = document.querySelector(`#${tag}`)   // get container element
-        const div = document.createElement('div')               // create new div
-        div.className = classPrefix + 'grid'                    // add class
-        div.id = idPrefix + i                                   // add ID
-        DOMLocation.append(div)                                 // append
-
-        /**
-         * Because this version auto-places the player's ships and allows them to randomize it,
-         * we are adding the ship's name to the class list and styling using that approach.
-         */
-        if (playerBoard.board[i - 1] !== undefined) {
-            document.getElementById(idPrefix + i).classList.add('playerBoard.board[i - 1]')
-        } 
-    }
-}
 
 function placeComputerShips() {
     const container = document.getElementById('computer-area')
@@ -150,23 +102,30 @@ function placeComputerShips() {
     }
 }
 
-/**
- * Remove all child elements of the parent element in the DOM
- */
-function resetDOMBoard(parent) {
-    while (parent.firstChild) {
-        parent.firstChild.className = '';
-        parent.removeChild(parent.firstChild);
+function createCPUInDOM(tag, classPrefix, idPrefix) {
+    for (let i = 1; i <= 100; i++) {
+        const location = document.querySelector(`#${tag}`)
+        const div = document.createElement('div')
+        div.className = classPrefix + 'grid'
+        div.id = idPrefix + i
+        location.append(div)
+
+        if (computerBoard.board[i - 1] !== undefined) {
+            document.getElementById(idPrefix + i).classList.add(computerBoard.board[i - 1])
+        }
     }
 }
 
+/**
+ * Create and place player ships, and updates the DOM
+ */
 function placePlayerShips() {
     const container = document.getElementById('player-area');
     resetDOMBoard(container)
 
     playerBoard.board = []
 
-    createBoardInDOM('player-area', 'p', '')
+    createPlayerInDOM('player-area', 'p', '')
 
 
     for (let i = 0; i < 5; i++) {
@@ -217,11 +176,28 @@ function placePlayerShips() {
             playerBoard.board[x] = ship.name
         }
     }
-    //createBoardInDOM(playerBoard, 'player-area', 'p', '')
     for (let i = 0; i < 100; i++) {
         if (playerBoard.board[i] !== undefined) {
             document.getElementById(i).classList.add('ship-color')
         }
+    }
+}
+
+function createPlayerInDOM(tag, classPrefix, idPrefix) {
+    for(let i = 1; i <= 100; i++ ){ 
+        const DOMLocation = document.querySelector(`#${tag}`)   // get container element
+        const div = document.createElement('div')               // create new div
+        div.className = classPrefix + 'grid'                    // add class
+        div.id = idPrefix + i                                   // add ID
+        DOMLocation.append(div)                                 // append
+
+        /**
+         * Because this version auto-places the player's ships and allows them to randomize it,
+         * we are adding the ship's name to the class list and styling using that approach.
+         */
+        if (playerBoard.board[i - 1] !== undefined) {
+            document.getElementById(idPrefix + i).classList.add('playerBoard.board[i - 1]')
+        } 
     }
 }
 
@@ -239,7 +215,6 @@ function getVerticleArray(length) {
     }
     return temp
 }
-
 function getHorizontalArray(length) {
     let num = getRandomGrid()
     let temp = [num]
@@ -263,11 +238,9 @@ function randomBool() {
 }
 
 
-
 /**
  * This function will reset the gameboard for a new game. IN PROGRESS...
  */
-
 function reset() {
     playerBoard = new Gameboard
     computerBoard = new Gameboard
@@ -275,4 +248,24 @@ function reset() {
     placeComputerShips()
 }
 
-export { setup, placePlayerShips, reset, game, takeShot }
+/**
+ * Remove all child elements of the parent element in the DOM
+ */
+function resetDOMBoard(parent) {
+    while (parent.firstChild) {
+        parent.firstChild.className = '';
+        parent.removeChild(parent.firstChild);
+    }
+}
+
+/**
+ * Remove all CPU eventListeners so that further clicks on the CPU board does not do anything
+ */
+function removeAllCPUListeners() {
+    for (let i = 1; i <= 100; i++) {
+        const gridID = document.getElementById(`c${i}`)
+        gridID.removeEventListener('click', shoot)
+    }
+}
+
+export { setup, placePlayerShips, reset, game, resolvePlayerShot }
