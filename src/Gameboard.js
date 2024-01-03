@@ -2,8 +2,8 @@ import { Ship } from './Ship';
 
 class Gameboard {
     constructor() {
-        this.board = this.createBoard();
-        this.numberOfShipsSunk = 0;
+        this.board = this.createBoard()
+        this.numberOfShipsSunk = 0
         this.ships = [
             this.createShip("patrolboat", 2),
             this.createShip("submarine", 3),
@@ -12,57 +12,42 @@ class Gameboard {
             this.createShip("carrier", 5)
         ]
     }
-    // Create array to hold board contents
-    createBoard() {
-        let arr = [];
+    createBoard() {                             // create array of 100 elements
+        let arr = [];                           // that will track hits & misses
         for (let i = 0; i < 100; i++) {
-            arr.push(undefined);
+            arr.push(undefined)
         }
         return arr;
     }
-    // Use ship class to create individual ships
     createShip(name, length) {
-        return new Ship(name, length);
-    }
-    placeShip(ship, index) {
-        
-        // TODO - place ships at specific coordinates, update as needed
+        return new Ship(name, length)
     }
     receiveAttack(coordinate, id) {
         const value = this.board[coordinate]
         const grid = document.getElementById(id)
 
         if (value === undefined) {
-            this.board[coordinate] = 'miss'
-            grid.classList.add('miss')
-            // missed, nothing else need happen
+            this.board[coordinate] = 'miss'     // update object
+            grid.classList.add('miss')          // update color in DOM
         } else {
-            this.board[coordinate] = 'hit'
-            grid.classList.add('hit')
-            grid.classList.remove('ship-color')
-            for (let ship of this.ships) {
-                if (ship.name === value) {
-                    ship.hit()
+            this.board[coordinate] = 'hit'      // update object
+            grid.classList.add('hit')           // update DOM color
+            grid.classList.remove('ship-color') // remove default color
+            for (let ship of this.ships) {      
+                if (ship.name === value) {      // update object variables
+                    ship.hit()                  // and check for sunk
                     ship.checkIfSunk()
-
-                    if (ship.isSunk === true) {
-                        this.numberOfShipsSunk++
-                    }
+                    if (ship.isSunk) this.increaseSunk()
                 }
             }
         }
     }
-
+    increaseSunk() {
+        this.numberOfShipsSunk++
+    }
     testAllSunk() {
-        return this.numberOfShipsSunk === 5;
+        return this.numberOfShipsSunk === 5
     }
-    getShipOrientation(ship) {
-        console.log('nothing')
-    }
-    getShipSize(shipName) {
-        const found = this.ships.find((shipName) => shipName === this.ships.name)
-    }
-
 }
 
 export { Gameboard }
