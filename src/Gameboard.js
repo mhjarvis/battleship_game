@@ -29,8 +29,10 @@ class Gameboard {
         
         // TODO - place ships at specific coordinates, update as needed
     }
-    receiveAttack(coordinate) {
+    receiveAttack(coordinate, id) {
         const value = this.board[coordinate]
+        console.log(id)
+
 
         if (value === 'miss' || value === 'hit') {
             return

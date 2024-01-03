@@ -23,7 +23,6 @@ function setup() {
 
 function game() {
     const sendOutput = document.getElementById('output')
-
     sendOutput.innerText = 'Your shot!'
 
 
@@ -32,9 +31,8 @@ function game() {
 
 function takeShot(id) {
     let target = id.slice(1)
-    console.log(target)
 
-    computerBoard.receiveAttack(target)
+    computerBoard.receiveAttack(target, id)
 
 /*     if (computerBoard.board[target] === undefined) {
         console.log('miss')

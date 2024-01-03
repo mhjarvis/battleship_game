@@ -79,24 +79,9 @@ h1 {
     SHIP CLASS COLORS
 */
 
-.patrolboat {
-    background-color: black;
-}
-
-.battleship {
-    background-color: blue;
-}
-
-.cruiser {
-    background-color: red;
-}
-
-.carrier {
-    background-color: green;
-}
-
-.submarine {
-    background-color: orange;
+.patrolboat, .battleship, .cruiser, .carrier, .submarine {
+    background-color: rgb(53, 155, 215);
+    opacity: %;
 }
 
 

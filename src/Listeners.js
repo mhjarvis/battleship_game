@@ -35,16 +35,20 @@ function secondaryListeners() {
     const allComputerSquares = document.querySelectorAll('.cgrid')
 
     for (let square of allPlayerSquares) {
-        square.addEventListener('click', () => {
+        square.addEventListener('click', function fire() {
 
         })
     }
 
     for (let square of allComputerSquares) {
-        square.addEventListener('click', (event) => {
-            takeShot(event.target.id)
-        })
+        square.addEventListener('click', shoot)
     }
+}
+
+function shoot(event) {
+    takeShot(event.target.id)
+    let grid = document.getElementById(event.target.id)
+    grid.removeEventListener('click', shoot)
 }
 
 
