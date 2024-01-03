@@ -33,6 +33,16 @@ function game() {
 function takeShot(id) {
     let target = id.slice(1)
     console.log(target)
+
+    if (computerBoard.board[target] === undefined) {
+        console.log('miss')
+    } else if (computerBoard.board[target] === 'miss') {
+        console.log('already fired here')
+    } else if (computerBoard.board[target] === 'hit') {
+        console.log('already fired here')
+    } else {
+        console.log('HIIIIIITTTTTTT!!!!!!')
+    }
 }
 
 function createCPUInDOM(tag, classPrefix, idPrefix) {
