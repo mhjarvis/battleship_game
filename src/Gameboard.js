@@ -18,7 +18,6 @@ class Gameboard {
         for (let i = 0; i < 100; i++) {
             arr.push(undefined);
         }
-        //console.log(arr)
         return arr;
     }
     // Use ship class to create individual ships
@@ -32,21 +31,25 @@ class Gameboard {
     receiveAttack(coordinate, id) {
         const value = this.board[coordinate]
         const grid = document.getElementById(id)
-        console.log(id)
-
-
-        if (value === 'miss' || value === 'hit') {
-            return
-        }
 
         if (value === undefined) {
             this.board[coordinate] = 'miss'
             grid.classList.add('miss')
+            // missed, nothing else need happen
         } else {
-            console.log('hit')
             this.board[coordinate] = 'hit'
             grid.classList.add('hit')
             grid.classList.remove('ship-color')
+            for (let ship of this.ships) {
+                if (ship.name === value) {
+                    ship.hit()
+                    ship.checkIfSunk()
+
+                    if (ship.isSunk === true) {
+                        this.numberOfShipsSunk++
+                    }
+                }
+            }
         }
     }
 

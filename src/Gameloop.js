@@ -24,9 +24,6 @@ function setup() {
 function game() {
     const sendOutput = document.getElementById('output')
     sendOutput.innerText = 'Your shot!'
-
-
-
 }
 
 function takeShot(id) {
@@ -34,7 +31,7 @@ function takeShot(id) {
 
 
     computerBoard.receiveAttack(target, id)
-
+    checkForWin()
 /*     if (computerBoard.board[target] === undefined) {
         console.log('miss')
     } else if (computerBoard.board[target] === 'miss') {
@@ -44,6 +41,16 @@ function takeShot(id) {
     } else {
         console.log('HIIIIIITTTTTTT!!!!!!')
     } */
+}
+
+function checkForWin() {
+    console.log(computerBoard.numberOfShipsSunk)
+    if (playerBoard.testAllSunk() === true) {
+        console.log('Computer Wins')
+    }
+    if (computerBoard.testAllSunk() === true) {
+        console.log('Player Wins')
+    }
 }
 
 function createCPUInDOM(tag, classPrefix, idPrefix) {
@@ -105,7 +112,6 @@ function placeComputerShips() {
                     if (a <= 0) {
                         test = false
                     } else if (computerBoard.board[a] !== undefined) {
-                        console.log('cpu space taken')
                         test = false
                     }
                 }
@@ -179,7 +185,6 @@ function placePlayerShips() {
                     if (a <= 0) {
                         test = false
                     } else if (playerBoard.board[a] !== undefined) {
-                        console.log('space taken')
                         test = false
                     }
                 }
@@ -218,9 +223,6 @@ function placePlayerShips() {
             document.getElementById(i).classList.add('ship-color')
         }
     }
-    //console.log(playerBoard.board)
-
-    
 }
 
 /**
@@ -259,6 +261,7 @@ function getRandomGrid() {
 function randomBool() {
     return Math.random() >= 0.5
 }
+
 
 
 /**
