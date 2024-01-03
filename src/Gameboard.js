@@ -30,8 +30,20 @@ class Gameboard {
         // TODO - place ships at specific coordinates, update as needed
     }
     receiveAttack(coordinate) {
-        // TODO - determine hit/miss, send hit() function to ship and update where needed
+        const value = this.board[coordinate]
+
+        if (value === 'miss' || value === 'hit') {
+            return
+        }
+
+        if (value === undefined) {
+            this.board[coordinate] = 'miss'
+        } else {
+            this.board[coordinate] = 'hit'
+        }
+
     }
+
     testAllSunk() {
         return this.numberOfShipsSunk === 5;
     }
