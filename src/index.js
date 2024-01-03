@@ -1,6 +1,6 @@
- import { game } from "./Gameloop";
+ import { setup } from "./Gameloop";
 
-game();
+setup();
 
 
 // npx webpack --watch

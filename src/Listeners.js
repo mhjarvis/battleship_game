@@ -1,4 +1,4 @@
-import { placePlayerShips, reset } from "./Gameloop";
+import { placePlayerShips, reset, game, takeShot } from "./Gameloop";
 
 function initiateListeners() {
 
@@ -15,7 +15,10 @@ function initiateListeners() {
         startButton.classList.toggle('hidden')
         resetButton.classList.toggle('hidden')
 
-        secondaryListeners()
+        secondaryListeners()        // add listeners to grid-boxes
+
+        const getOutput = document.getElementById('output')
+        getOutput.innerText = 'Your Shot!'
     })
 
     resetButton.addEventListener('click', () => {
@@ -33,13 +36,13 @@ function secondaryListeners() {
 
     for (let square of allPlayerSquares) {
         square.addEventListener('click', () => {
-            console.log('working')
+
         })
     }
 
     for (let square of allComputerSquares) {
-        square.addEventListener('click', () => {
-
+        square.addEventListener('click', (event) => {
+            takeShot(event.target.id)
         })
     }
 }

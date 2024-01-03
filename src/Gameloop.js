@@ -1,22 +1,38 @@
 import { Gameboard } from "./Gameboard";
 import { initiateListeners } from "./Listeners";
 
+let playerBoard, computerBoard;         // Gameboard objects
+let isWinner = false                    // For game() loop exit
 
-let playerBoard, computerBoard;
+/**
+ * This function is for the intial setup and will place player and computer ships. 
+ */
 
-function game() {
-
-    // Create gameboards and place initial ships
+function setup() {
     playerBoard = new Gameboard
     computerBoard = new Gameboard
 
-    placePlayerShips()
-    placeComputerShips()
+    placePlayerShips()                      // initial player placement
+    placeComputerShips()                    // initial computer placement (does not change)
+    initiateListeners()                     // initial listeners for buttons
+}
 
-    initiateListeners()
+/**
+ * This function will initiate upon the 'Start Game' button being clicked. 
+ */
+
+function game() {
+    const sendOutput = document.getElementById('output')
+
+    sendOutput.innerText = 'Your shot!'
 
 
 
+}
+
+function takeShot(id) {
+    let target = id.slice(1)
+    console.log(target)
 }
 
 function createCPUInDOM(tag, classPrefix, idPrefix) {
@@ -245,4 +261,4 @@ function reset() {
     placeComputerShips()
 }
 
-export { game, placePlayerShips, reset }
+export { setup, placePlayerShips, reset, game, takeShot }
