@@ -31,6 +31,7 @@ class Gameboard {
     }
     receiveAttack(coordinate, id) {
         const value = this.board[coordinate]
+        const grid = document.getElementById(id)
         console.log(id)
 
 
@@ -40,10 +41,13 @@ class Gameboard {
 
         if (value === undefined) {
             this.board[coordinate] = 'miss'
+            grid.classList.add('miss')
         } else {
+            console.log('hit')
             this.board[coordinate] = 'hit'
+            grid.classList.add('hit')
+            grid.classList.remove('ship-color')
         }
-
     }
 
     testAllSunk() {

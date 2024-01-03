@@ -32,6 +32,7 @@ function game() {
 function takeShot(id) {
     let target = id.slice(1)
 
+
     computerBoard.receiveAttack(target, id)
 
 /*     if (computerBoard.board[target] === undefined) {
@@ -78,7 +79,7 @@ function createBoardInDOM(tag, classPrefix, idPrefix) {
          * we are adding the ship's name to the class list and styling using that approach.
          */
         if (playerBoard.board[i - 1] !== undefined) {
-            document.getElementById(idPrefix + i).classList.add(playerBoard.board[i - 1])
+            document.getElementById(idPrefix + i).classList.add('playerBoard.board[i - 1]')
         } 
     }
 }
@@ -138,7 +139,7 @@ function placeComputerShips() {
     }
     for (let i = 0; i < 100; i++) {
         if (computerBoard.board[i] !== undefined) {
-            document.getElementById('c' + i).classList.add(computerBoard.board[i])
+            document.getElementById('c' + i).classList.add('ship-color')
         }
     }
 }
@@ -214,7 +215,7 @@ function placePlayerShips() {
     //createBoardInDOM(playerBoard, 'player-area', 'p', '')
     for (let i = 0; i < 100; i++) {
         if (playerBoard.board[i] !== undefined) {
-            document.getElementById(i).classList.add(playerBoard.board[i])
+            document.getElementById(i).classList.add('ship-color')
         }
     }
     //console.log(playerBoard.board)

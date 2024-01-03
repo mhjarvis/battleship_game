@@ -47,6 +47,8 @@ function secondaryListeners() {
 
 function shoot(event) {
     takeShot(event.target.id)
+
+    // remove event listener
     let grid = document.getElementById(event.target.id)
     grid.removeEventListener('click', shoot)
 }
