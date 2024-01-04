@@ -47,19 +47,20 @@ function resolveCPUShot() {
     checkForWin()                                                       // test win condition
 }
 
+/**
+ * Test both player objects for win condition
+ */
 function checkForWin() {
     const output = document.getElementById('output')
-    console.log('Num of CPU ships sunk: ', computerBoard.numberOfShipsSunk)
     if (playerBoard.testAllSunk() === true) {
         output.innerText = 'The Computer beat you this time!'
-        removeAllCPUListeners()
+        removeAllCPUListeners()                                         // makes board obsolete
     }
     if (computerBoard.testAllSunk() === true) {
         output.innerText = 'You won this round!'
-        removeAllCPUListeners()
+        removeAllCPUListeners()                                         // makes board obsolete
     }
 }
-
 
 /**
  * 
@@ -120,13 +121,16 @@ function placeComputerShips() {
             computerBoard.board[x] = ship.name
         }
     }
-    for (let i = 0; i < 100; i++) {
+/*     for (let i = 0; i < 100; i++) {
         if (computerBoard.board[i] !== undefined) {
             document.getElementById('c' + i).classList.add('ship-color')
         }
-    }
+    } */
 }
 
+/**
+ * Show and update CPU board in DOM
+ */
 function createCPUInDOM(tag, classPrefix, idPrefix) {
     for (let i = 1; i <= 100; i++) {
         const location = document.querySelector(`#${tag}`)
