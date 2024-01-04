@@ -121,11 +121,6 @@ function placeComputerShips() {
             computerBoard.board[x] = ship.name
         }
     }
-/*     for (let i = 0; i < 100; i++) {
-        if (computerBoard.board[i] !== undefined) {
-            document.getElementById('c' + i).classList.add('ship-color')
-        }
-    } */
 }
 
 /**
