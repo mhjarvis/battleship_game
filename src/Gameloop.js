@@ -17,34 +17,34 @@ function game() {                           // only updates initial player notif
     sendOutput.innerText = 'Your shot!'
 }
 
+/**
+ * Performs basic player shot once player clicks on CPU's gameboard
+ */
 function resolvePlayerShot(id) {
     let index = id.slice(1)                     // get index for the computerBoard.board object
     computerBoard.receiveAttack(index, id)      // update computerBoard.board & DOM coloring
     checkForWin()                               
 }
 
+/**
+ * Performs random guess for CPU, updates object and text-outputs
+ */
 function resolveCPUShot() {
-    const output = document.getElementById('output')
-    output.innerText = 'Computer is thinking...'
-    let grid = getRandomGrid() + 1
-    let passTest = false
+    const output = document.getElementById('output')        
+    output.innerText = 'Computer is thinking...'            
+    let grid = getRandomGrid() + 1                      // get number between 1 - 100
 
-    while (passTest === false) {
+    while (true) {
         if (playerBoard.board[grid] !== 'hit' && playerBoard.board[grid] !== 'miss') {
-            console.log(grid)
-            console.log('before: ', playerBoard.board[grid])
-            playerBoard.receiveAttack(grid, grid)
-            console.log('after', playerBoard.board[grid])
-            passTest = true
-            console.log(grid)
+            playerBoard.receiveAttack(grid, grid)       // if legal, take shot
+            break
         } else {
-            grid = getRandomGrid() + 1
+            grid = getRandomGrid() + 1                  // attempt again
             continue
         }
     }
-    game()
-    checkForWin()
-    console.log('CPU ships sunk: ', playerBoard.numberOfShipsSunk)
+    game()                                                              // update output to player
+    checkForWin()                                                       // test win condition
 }
 
 function checkForWin() {
@@ -59,6 +59,7 @@ function checkForWin() {
         removeAllCPUListeners()
     }
 }
+
 
 /**
  * 
