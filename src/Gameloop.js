@@ -24,8 +24,27 @@ function resolvePlayerShot(id) {
 }
 
 function resolveCPUShot() {
-    let grid = getRandomGrid()
-    console.log(grid)
+    const output = document.getElementById('output')
+    output.innerText = 'Computer is thinking...'
+    let grid = getRandomGrid() + 1
+    let passTest = false
+
+    while (passTest === false) {
+        if (playerBoard.board[grid] !== 'hit' && playerBoard.board[grid] !== 'miss') {
+            console.log(grid)
+            console.log('before: ', playerBoard.board[grid])
+            playerBoard.receiveAttack(grid, grid)
+            console.log('after', playerBoard.board[grid])
+            passTest = true
+            console.log(grid)
+        } else {
+            grid = getRandomGrid() + 1
+            continue
+        }
+    }
+    game()
+    checkForWin()
+    console.log('CPU ships sunk: ', playerBoard.numberOfShipsSunk)
 }
 
 function checkForWin() {

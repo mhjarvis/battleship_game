@@ -47,11 +47,12 @@ function shoot(event) {
     let grid = document.getElementById(event.target.id)         // get the id of the grid that was clicked
     resolvePlayerShot(event.target.id)                          // pass to get resolved
 
-    console.log('thinking...')
+    let output = document.getElementById('output')
+    output.innerText = 'CPU is thinking...'
 
     setTimeout(function () {                                    // resolve computer shot after wait
         resolveCPUShot()
-    }, 1000)
+    }, 500)
 
 
     grid.removeEventListener('click', shoot)                    // removes this listener for subsequent clicks
