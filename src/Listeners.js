@@ -1,4 +1,4 @@
-import { placePlayerShips, reset, game, resolvePlayerShot } from "./Gameloop";
+import { placePlayerShips, reset, game, resolvePlayerShot, resolveCPUShot } from "./Gameloop";
 
 /**
  * These are initial eventListeners that will attach to the three avaiable buttons:
@@ -46,6 +46,13 @@ function secondaryListeners() {
 function shoot(event) {
     let grid = document.getElementById(event.target.id)         // get the id of the grid that was clicked
     resolvePlayerShot(event.target.id)                          // pass to get resolved
+
+    console.log('thinking...')
+
+    setTimeout(function () {                                    // resolve computer shot after wait
+        resolveCPUShot()
+    }, 1000)
+
 
     grid.removeEventListener('click', shoot)                    // removes this listener for subsequent clicks
 }                                                               // will do nothing

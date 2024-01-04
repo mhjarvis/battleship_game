@@ -23,6 +23,11 @@ function resolvePlayerShot(id) {
     checkForWin()                               
 }
 
+function resolveCPUShot() {
+    let grid = getRandomGrid()
+    console.log(grid)
+}
+
 function checkForWin() {
     const output = document.getElementById('output')
     console.log('Num of CPU ships sunk: ', computerBoard.numberOfShipsSunk)
@@ -268,4 +273,4 @@ function removeAllCPUListeners() {
     }
 }
 
-export { setup, placePlayerShips, reset, game, resolvePlayerShot }
+export { setup, placePlayerShips, reset, game, resolvePlayerShot, resolveCPUShot }
